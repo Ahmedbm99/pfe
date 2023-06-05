@@ -6,7 +6,9 @@
           <b-col cols="7">
             <b-card style="color: #001e5f">
               <h4 class="font-weight-bold">Add Company</h4>
-                <b-form @submit.stop.prevent="createAccount" class="mt-4">
+                <b-form 
+                @submit.stop.prevent="newCompany"
+                 class="mt-4">
                   <b-row>
                   <b-col>
                     <b-form-group
@@ -178,7 +180,7 @@
                     <b-row class="mt-3">
                     <b-col cols="3" />
                     <b-col cols="6">
-                    <b-button block type="submit" class="p-2" variant="warning">
+                    <b-button @click="addedCompany()" block type="submit" class="p-2" variant="warning">
                       Add Company
                     </b-button>
                   </b-col>
@@ -276,6 +278,7 @@
     
     },
     methods: {
+       
         selectedImage(event) {
         this.image = event.target.files;
   
@@ -293,7 +296,7 @@
           }
         }
       },
-      async createAccount() {
+      async newCompany() {
         if (
           !this.NameValidation ||
           !this.PatenteValidation ||
@@ -317,15 +320,25 @@
   
           });
         
-          this.$store.dispatch("Company/setNewCompanyId", company.data.id);
-          this.$store.dispatch("Company/setNewCompanyEmail", this.email);
-          this.$store.dispatch("Company/SET_Name", this.Name);
+          console.log(company);
+          
+          
         } catch (error) {
           this.validEmail = false;
           this.emailMessage = error.response.data.error;
         }
       },
+      async addedCompany(){ 
+      this.$bvToast.toast("The company has been added successfully", {
+            title: "ADD",
+            variant: "success",
+            toaster: "b-toaster-top-center",
+            noCloseButton: false,
+            solid: true,
+          });
+        },
     },
+
   };
   </script>
   

@@ -19,6 +19,9 @@
             <b-nav-item to="/admin/addCompany" class="ml-2">
               <div style="color: #fff; font-size: 18px">Add Company</div>
             </b-nav-item>
+            <b-nav-item to="/admin/newContract" class="ml-2">
+              <div style="color: #fff; font-size: 18px">New Contract</div>
+            </b-nav-item>
             <b-nav-item to="/admin/orders" class="ml-2">
               <div style="color: #fff; font-size: 18px">Orders</div>
             </b-nav-item>

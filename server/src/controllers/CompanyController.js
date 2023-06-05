@@ -12,8 +12,27 @@ module.exports = {
 			})
 		}
 	} ,
+	async getAllCompany(req,res){
+		try {
+			const Companies = await Company.findAll({
+				attributes: [
+					"id",
+					"name",
+					"location",
+				  ],
+				}
+
+			);
+			res.send(Companies)
+		} catch (err) {
+			res.status(500).send({
+			  error: "An error occured when trying to fetch companies.",
+			});
+		  }
+	},
 	async createCompany(req,res){
 		try {
+			console.log(req.body);
 			const company = await Company.create(req.body);
 			console.log(company);
 			res.send(company);
@@ -43,10 +62,10 @@ module.exports = {
             })
 			if (!company) {
                 return res.status(403).send({
-                    error: "Company not registered."
+                    error: "Company not found."
                 })
             }
-            res.send(company)
+            res.send(company.id)
         } catch (error) {
             res.status(500).send({
                 error: "An error occured when trying to get a company."

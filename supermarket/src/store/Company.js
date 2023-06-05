@@ -5,26 +5,42 @@ export const CompanyModule = {
   state: {
     companyId: 1,
     company: {},
-    
+    companies:[],
   },
   mutations: {
     SET_COMPANY(state, company) {
       state.company = company;
     },
   },
-  SET_NEW_COMPANY_ID(state, id) {
-    state.companyId = id;
-  },
+
    SET_NAME(state, { Name}) {
     state.company.name = Name;
   },
   SET_NEW_COMPANY_EMAIL(state, email) {
     state.companyEmail = email;
   },
- 
+  SET_COMPANIES(state, companies) {
+    state.companies = companies;
+  },
   actions: {
 
-    
+    async setCompanies({ commit }) {
+      try {
+        const Companies = (await CompanyService.getAllCompany()).data;
+        commit("SET_COMPANIES", Companies);
+      } catch (error) {
+        console.log(error.response.data.error);
+      }
+    },
+
+    async getCompanies({ state, dispatch }) {
+      if (state.Companies && state.Companies.length == 0) {
+        await dispatch("setCompanies");
+      }
+      return state.Companies;
+    },
+
+
     async setNewCompany({ state, commit }) {
       try {
         const company = (await CompanyService.createCompany(state.commit)).data;
@@ -48,13 +64,11 @@ export const CompanyModule = {
       }
       return state.company;
     },
-    setName({ commit }, { Name }) {
+    async setName({ commit }, { Name }) {
       commit("SET_NAME", { Name});
     },
-    setNewCompanyId({ commit }, id) {
-      commit("SET_NEW_COMPANY_ID", id);
-    },
-    setNewCompanyEmail({ commit }, email) {
+    
+    async setNewCompanyEmail({ commit }, email) {
       commit("SET_NEW_COMPANY_EMAIL", email);
     },
     

@@ -12,5 +12,8 @@ export default {
   },
   getCompanyByName(companyName){
     return Api().get(`/api/company/getCompanyByName/${companyName}`)
+  },
+  getAllCompanies(){
+    return Api().get("/api/company/getAllCompany")
   }
 };

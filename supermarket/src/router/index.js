@@ -31,6 +31,7 @@ import SProfile from "@/views/Supplier/SProfile.vue";
 import SDashboard from "@/views/Supplier/SDashboard.vue";
 import AddSupplier from "@/views/Admin/AddSupplier.vue";
 import AUpdateProduct from "@/views/Admin/AUpdateProduct.vue"
+import NewContract from "@/views/Admin/NewContract.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -148,6 +149,12 @@ const routes = [
     name: "admin",
     component: ADashboard,
     meta: { requiresAuth: true, title: "Admin panel | EShopping" },
+  },
+  {
+    path: "/admin/newContract",
+    name: "New-Contract",
+    component: NewContract,
+    meta: { title: "New Contract | EShopping" },
   },
   {
     path: "/admin/users",

@@ -276,7 +276,7 @@
                     <b-button type="reset" variant="danger" block>Reset</b-button>
                   </b-col>
                   <b-col>
-                    <b-button variant="primary" block type="submit">
+                    <b-button  @click="addedProduct()" variant="primary" block type="submit">
                       Submit
                     </b-button>
                   </b-col>
@@ -478,6 +478,15 @@
           }
         }
       },
+      async addedProduct(){ 
+      this.$bvToast.toast("The company has been added successfully", {
+            title: "ADD",
+            variant: "success",
+            toaster: "b-toaster-top-center",
+            noCloseButton: false,
+            solid: true,
+          });
+        },
     },
   };
   </script>

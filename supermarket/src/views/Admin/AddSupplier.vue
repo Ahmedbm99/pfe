@@ -187,6 +187,8 @@
   
   <script>
   import AuthenticationService from "@/services/AuthenticationService.js";
+  import CompanyService from "@/services/CompanyService.js";
+
   import ATopHeader from "@/components/Admins/ATopHeader.vue";
   import MyFooter from "@/components/Common/MyFooter.vue";
   export default {
@@ -284,6 +286,7 @@
         )
           return;
         try {
+          const CompanyID = await CompanyService.getCompanyByName(this.companyName);
           const user = await AuthenticationService.register({
             firstName: this.firstName,
             lastName: this.lastName,
@@ -297,7 +300,7 @@
         
           this.$store.dispatch("CurrentUser/setNewUserId", user.data.id);
           this.$store.dispatch("CurrentUser/setNewUserEmail", this.email);
-          this.$store.dispatch("CurrentUser/SET_COMPANY_ID", this.companyName);
+          this.$store.dispatch("CurrentUser/SET_COMPANY_ID", CompanyID);
          
           this.$router.push({ path: "/user-verify" });
         } catch (error) {
