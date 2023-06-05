@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       motive:           DataTypes.STRING,
       details:          DataTypes.TEXT,
       location:         DataTypes.STRING,
-      pattente:         DataTypes.INTEGER,
+      patente:         DataTypes.STRING,
       
     })
     return Company

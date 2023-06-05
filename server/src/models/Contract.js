@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey:     true,
         autoIncrement:  true
       },
-      commission:             DataTypes.INTEGER,
+      commission:             DataTypes.FLOAT(1,2),
 
       StartDate:             DataTypes.DATE,
       EndDate:         DataTypes.DATE,

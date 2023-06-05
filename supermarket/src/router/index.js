@@ -12,7 +12,7 @@ import Wishlist from "@/views/UsersProduct/Wishlist.vue";
 import Checkout from "@/views/BuyProduct/Checkout.vue";
 import Order from "@/views/BuyProduct/ViewOrder.vue";
 import Successful from "@/views/Paymoney/Successful.vue";
-
+import AddCompany from "@/views/Admin/AddCompany.vue"
 import AboutUs from "@/views/AboutUs.vue";
 import Register from "@/views/User/Register.vue";
 import Login from "@/views/User/Login.vue";
@@ -45,6 +45,12 @@ const routes = [
     name: "all-products",
     component: AllProducts,
     meta: { title: "Products page | EShopping" },
+  },
+  {
+    path:"/admin/addCompany",
+    name: "Add-Company",
+    component:AddCompany,
+    meta: { title: "Add Company | EShopping" },
   },
   {
     path: "/products/:category",

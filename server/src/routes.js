@@ -63,8 +63,14 @@ module.exports = (app) => {
   // company
   app.get("/api/company/getCompany/:companyId",
     CompanyController.getCompany)
-
-  // order
+  app.post("api/company/createCompany",
+    CompanyController.createCompany)
+  app.post("api/company/createContract",
+    CompanyController.createContract)
+  app.get("api/company/getCompanyByName/:companyName")
+  
+  
+    // order
   app.get("/api/order/getOrderList",
     OrderController.getOrderList)
   app.get("/api/order/getOrder/:orderId",
