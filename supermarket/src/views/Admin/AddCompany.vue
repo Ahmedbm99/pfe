@@ -79,7 +79,7 @@
                     <b-col>
                     <b-form-group
                       id="input-group-patente"
-                      label="Pattente"
+                      label="Patente"
                       label-for="input-patente"
                     >
                     <b-form-input
@@ -101,14 +101,13 @@
                     <b-col>
                     <b-form-group
                         id="input-group-images"
-                        label="Product Images"
+                        label="Company Logo"
                         label-for="input-images"
                     >
                     <b-form-file
                         id="input-images"
-                        placeholder="Company image"
-                        required
-                        multiple
+                        placeholder="Company logo"
+                        
                         @change="selectedImage"
                   />
                     </b-form-group>
@@ -197,10 +196,9 @@
   </template>
   
   <script>
-  import AuthenticationService from "@/services/AuthenticationService.js";
   import ATopHeader from "@/components/Admins/ATopHeader.vue";
   import MyFooter from "@/components/Common/MyFooter.vue";
-import CompanyService from '../../services/CompanyService';
+   import CompanyService from "@/services/CompanyService";
   export default {
     name: "AddSupplier",
     components: {
@@ -264,7 +262,7 @@ import CompanyService from '../../services/CompanyService';
       LocationValidation() {
         if (this.location == null) return null;
         else if (
-          this.formatLocation.test(this.location))return false;
+          !this.formatLocation.test(this.location))return false;
         else return true;
       },
       phoneNumberValidation() {
