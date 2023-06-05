@@ -1,0 +1,4 @@
+supermarket/node_modules/
+supermarket/dist
+server/node_modules/
+server/.env
