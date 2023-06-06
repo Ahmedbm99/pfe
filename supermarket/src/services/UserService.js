@@ -19,4 +19,7 @@ export default {
   getUserByEmail(email) {
     return Api().get(`/api/user/getUserByEmail/${email}`);
   },
+  getUserTypeList(){
+    return Api().get("/api/user/getUserTypeList");
+  }
 };

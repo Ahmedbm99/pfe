@@ -64,6 +64,8 @@
                       
                     </b-form-group>
                   </b-col>
+                  <b-row>
+                  <b-col>
                 <b-form-group
                   id="input-commission"
                   label="Commission"
@@ -72,7 +74,7 @@
                   <b-form-input
                     v-model="commission"
                     id="input-commission"
-                    type="number"
+                    type="text"
                     
                     required
                   />
@@ -80,15 +82,30 @@
                     v-if="commission"
                     :state="CommissionValidation"
                   >
-                  
+                  please enter number less than 1 
                   </b-form-invalid-feedback>
                 </b-form-group>
+                </b-col>
+                <b-form-group
+                  id="input-group-title"
+                  label="Product Title"
+                  label-for="input-title"
+                >
+                  <b-form-input
+                    id="input-title"
+                    v-model="productTitle"
+                    placeholder="Enter Product Name"
+                    required
+                  />
+                </b-form-group>
+                </b-row>
+                    
   
                
                 <b-row class="mt-3">
                   <b-col cols="3" />
                   <b-col cols="6">
-                    <b-button block type="submit" class="p-2" variant="warning">
+                    <b-button  @click="addedContract()" block type="submit" class="p-2" variant="warning">
                       New Contract
                     </b-button>
                   </b-col>
@@ -109,6 +126,7 @@
   import ATopHeader from "@/components/Admins/ATopHeader.vue";
   import MyFooter from "@/components/Common/MyFooter.vue";
   import CompanyService from "@/services/CompanyService.js";
+import ProductsService from '../../services/ProductsService';
   export default {
     name: "NewContract",
     components: {
@@ -122,11 +140,13 @@
         formatName: /^^[a-zA-Z]{1,15}$/,
         commission: null,
         companyName:  null,
-        products: [],
+        commissionF: null,
+        
+        productTitle: null,
       };
     },
     mounted() {
-       
+      this.commissionF = parseFloat(this.commission)
     },
     computed: {
       tokenAlert() {
@@ -136,13 +156,14 @@
       },
     
       CommissionValidation() {
-        if (this.commission == null) return null;
-        else if (!this.commission< 1) return false;
+        if (this.commissionF == null) return null;
+        else if (!this.commissionF< 1 ) return false;
         else return true;
       },
       NameValidation() {
         if (this.Name == null) return null;
         else if (!this.formatName.test(this.Name)) return false;
+        
         else return true;
       },
     },
@@ -151,6 +172,7 @@
         this.companyName = company.name;
         this.CompanyLogo = company.id;
       },
+
       async newContract() {
         if (
           
@@ -158,23 +180,33 @@
         )
           return;
         try {
-            const companyid = await CompanyService.getCompanyByName(this.companyName);
+          console.log(this.productTitle);
+          const productId = (await ProductsService.getProductById(this.productTitle)).data;
+          console.log(productId);
+            const companyId = (await CompanyService.getCompanyByName(this.companyName)).data;
           const contract = await CompanyService.createContract({
             startDate: this.startDate,
             endDate: this.endDate,
-            commission: this.commission,
+            commission: this.commissionF,
           
-            CompanyId: companyid,
-            products:this.products
+            CompanyId: companyId,
+            ProductId: productId,
   
-          });
-          this.$store.dispatch("Company/SET_NEW_CONTRACT", contract);
-          this.$store.dispatch("Company/SET_COMPANY_ID", companyid);
-         
+          }).data;
+          console.log(contract);
         } catch (error) {
             console.error(error);
         }
       },
+      async addedContract(){ 
+      this.$bvToast.toast("The contract has been added successfully", {
+            title: "ADD",
+            variant: "success",
+            toaster: "b-toaster-top-center",
+            noCloseButton: false,
+            solid: true,
+          });
+        },
     },
   };
   </script>

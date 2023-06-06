@@ -44,11 +44,12 @@ module.exports = {
 	},
 	async createContract(req,res){
 		try {
+			console.log(req.body)
 			const contract = await Contract.create(req.body);
 			res.send(contract);
 		}catch(err) {
 		res.status(500).send({
-			error : 'An error occured when trying to create company.'
+			error : 'An error occured when trying to create contract.'
 		})
 	}
 	},

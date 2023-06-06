@@ -120,6 +120,20 @@ module.exports = {
             })
         }
     },
+    async getUserTypeList(req, res) {
+        try {
+           
+            const userList = await User.findAll({
+                attributes: ["userType",
+                             "priority"]
+            })
+            res.send(userList);
+        } catch (err) {
+            res.status(500).send({
+                error: "An error occured when trying to get user list."
+            })
+        }
+    },
     async getUserByEmail(req, res) {
         try {
             const user = await User.findOne({

@@ -158,6 +158,25 @@ module.exports = {
       });
     }
   },
+  async getProductById(req, res) {
+    try {
+      console.log(req.params.productTitle)
+      const product = await Product.findOne({
+        where: {
+          title: req.params.productTitle,
+          
+        },
+        attributes: ["id"]
+      });
+     
+      res.send(product.id);
+    } catch (err) {
+      res.status(500).send({
+        error: "An error occured when trying to fetch a product.",
+        
+      });
+    }
+  },
   async getProductRating(req, res) {
     try {
       const product = await Product.findByPk(req.params.productId, {

@@ -109,6 +109,8 @@ module.exports = (app) => {
     ProductsController.getProduct)
   app.get("/api/products/getProductId/:productTitle",
     ProductsController.getProductId)
+    app.get("/api/products/getProductById/:productTitle",
+    ProductsController.getProductById)
   app.get("/api/products/getProductRating/:productId",
     ProductsController.getProductRating)
   app.get("/api/products/getRecommendation/:subSubCategoryId/:limit",
@@ -174,6 +176,8 @@ module.exports = (app) => {
     SubSubCategoryController.deleteSubSubCategory)
 
   // user
+  app.get("/api/user/getUserTypeList",
+    UserController.getUserTypeList)
   app.get("/api/user/checkUserName/:userName",
     isAuthenticated,
     UserController.checkUserName)

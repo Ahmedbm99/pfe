@@ -24,6 +24,9 @@ export default {
   getProductId(productTitle) {
     return Api().get(`/api/products/getProductId/${productTitle}`);
   },
+  getProductById(productTitle) {
+    return Api().get(`/api/products/getProductById/${productTitle}`);
+  },
   getProductRating(productId) {
     return Api().get(`/api/products/getProductRating/${productId}`);
   },

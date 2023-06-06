@@ -193,7 +193,7 @@
             name: "Supplier",
             priority: 2,
             description: "User and supplier of this system.",
-            variant: "provider",
+            variant: "info",
           },
         ],
         currentPage: 1,
