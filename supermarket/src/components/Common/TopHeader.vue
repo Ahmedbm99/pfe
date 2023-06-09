@@ -154,7 +154,7 @@
         this.$store.dispatch("CurrentUser/setUser", {});
         this.$store.dispatch("Wishlist/clearWishlist");
         
-        this.$store.dispatch("CartView/clearCart", [] );
+        this.$store.dispatch("Cart/clearCart" , [] );
         window.location.reload();
       },
       set_category(category) {

@@ -3,6 +3,7 @@ export const CartModule = {
     strict: true,
     state: {
       cartProducts: [],
+      dataLoaded: false,
     },
     mutations: {
       SET_CART_PRODUCTS(state, cartProducts) {
@@ -17,11 +18,14 @@ export const CartModule = {
       REMOVE_CART_ITEM(state, index) {
         state.cartProducts.splice(index, 1);
       },
+      SET_DATA_LOADED(state, dataLoaded) {
+        state.dataLoaded = dataLoaded;
+      },
     },
     actions: {
       clearCart({ commit }) {
         commit("SET_CART_PRODUCTS", []);
-        
+        commit("SET_DATA_LOADED", false);
       },
       getCartItem({ state }, productId) {
         const index = state.cartProducts.findIndex(

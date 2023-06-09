@@ -161,9 +161,7 @@
       },
     },
     methods: {
-      async clearCart(){
-        await this.$store.dispatch("Cart/clearCart", this.cartProducts)
-      },
+     
       async quantityInc(product) {
         await this.$store.dispatch("Cart/updateCartItemQuantity", {
           productId: product.productId,
