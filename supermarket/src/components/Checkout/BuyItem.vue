@@ -92,12 +92,12 @@
           @click="checkoutApplied"
           block
           variant="success"
-          to="/successful"
+          to="/Successful"
           >
           <b-icon icon="cursor-fill" />
           Pay Now
         </b-button>
-        <b-button v-if="payBtnSpin"   block variant="success">
+        <b-button v-if="payBtnSpin" @click="checkoutApplied"  to="/Successful" block variant="success">
           Processing...
           <b-spinner small variant="light"></b-spinner>
         </b-button>
@@ -113,7 +113,7 @@
 
 <script>
 
-import CheckoutService from "@/services/CheckoutService.js";
+import OrderService from "@/services/OrderService.js";
 
 
 
@@ -183,17 +183,24 @@ export default {
         quantity: 1,
       });
       try {
-        var checkoutSession = (
-          await CheckoutService.createCheckoutSession({
-            checkoutProduct: checkoutItems,
-            customerName: customerName,
-            customerEmail: customerEmail,
-            customerPhoneNo: customerPhoneNo,
-            shippingAddress: shippingAddress,
+        var order = (
+          await OrderService.createOrder({
+            
+            name: customerName,
+            
+            email: customerEmail,
+            phoneNo: customerPhoneNo,
+            address: shippingAddress,
+            status: "in the process ",
+            variant: "dark",
+            checkoutSessionId: 16,
+            productCost: this.totalAmount,
+            currency :"TND",
+            shippingCost: this.shipping ,
+
           })  
         ).data;
-          console.log(checkoutSession);
-          checkoutSession.id =1;  
+            console.log(order);
         
 
  
