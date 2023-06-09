@@ -47,39 +47,45 @@
       };
     },
     async mounted() {
-      const sessionId = this.$route.query.id;
+
+      const sessionId =this.$route.query.id;
+      
       var previousOrder;
       try {
         previousOrder = (await OrderService.getOrderBySessionId(sessionId)).data;
       } catch (error) {
         console.log(error.response.data.error);
       }
-      if (previousOrder) return;
+     if (previousOrder) return;
       this.$store.dispatch("Cart/clearCart");
       try {
         this.session = (
           await CheckoutService.retrieveCheckoutSession(sessionId)
         ).data;
         this.validSession = Object.keys(this.session).length != 0;
+        console.log(this.validSession);
       } catch (error) {
         console.log(error.response.data.error);
       }
       if (!this.validSession) return;
+     console.log(this.session);
       const lineItems = this.session.line_items.data;
       const shipCost = lineItems[lineItems.length - 1].amount_total;
+      console.log(shipCost + " i'm here now " + lineItems );
       try {
+        
         this.order = (
           await OrderService.createOrder({
             name: this.session.metadata.customerName,
             phoneNo: this.session.metadata.customerPhoneNo,
             email: this.session.customer_email,
             address: this.session.metadata.shippingAddress,
-            status: "paid",
+            status: "in the process ",
             variant: "dark",
             checkoutSessionId: sessionId,
-            productCost: (this.session.amount_total - shipCost) / 100,
+            productCost: (this.session.amount_total - 4) / 100,
             currency: this.session.currency.toUpperCase(),
-            shippingCost: shipCost / 100,
+            shippingCost: 4,
           })
         ).data;
       } catch (error) {

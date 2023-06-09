@@ -23,6 +23,7 @@
     "powerbi-client-vue-js": "^1.0.3",
     "serve-static": "^1.15.0",
     "strip": "^3.0.0",
+    "util": "^0.12.5",
     "vue": "^2.6.12",
     "vue-chartjs": "^5.2.0",
     "vue-router": "^3.6.5",

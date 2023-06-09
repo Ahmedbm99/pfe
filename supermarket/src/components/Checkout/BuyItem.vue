@@ -92,11 +92,12 @@
           @click="checkoutApplied"
           block
           variant="success"
-        >
+          to="/successful"
+          >
           <b-icon icon="cursor-fill" />
           Pay Now
         </b-button>
-        <b-button v-if="payBtnSpin" block variant="success">
+        <b-button v-if="payBtnSpin"   block variant="success">
           Processing...
           <b-spinner small variant="light"></b-spinner>
         </b-button>
@@ -113,6 +114,8 @@
 <script>
 
 import CheckoutService from "@/services/CheckoutService.js";
+
+
 
 
 export default {
@@ -180,7 +183,7 @@ export default {
         quantity: 1,
       });
       try {
-        const checkoutSession = (
+        var checkoutSession = (
           await CheckoutService.createCheckoutSession({
             checkoutProduct: checkoutItems,
             customerName: customerName,
@@ -190,7 +193,9 @@ export default {
           })  
         ).data;
           console.log(checkoutSession);
-  
+          checkoutSession.id =1;  
+        
+
  
       } catch (error) {
         console.log(error.response.data.error);
