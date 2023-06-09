@@ -114,7 +114,7 @@
 <script>
 
 import OrderService from "@/services/OrderService.js";
-
+import OrderItemService from "../../services/OrderItemService";
 
 
 
@@ -131,7 +131,8 @@ export default {
       shippingRate: this.$store.state.Checkout.shippingRate,
       totalAmount: 0,
       checkoutProduct: null,
-    };
+      orderid : 1, 
+      };
   },
   computed: {},
   mounted() {
@@ -182,8 +183,11 @@ export default {
         },
         quantity: 1,
       });
-      try {
-        var order = (
+      
+        
+       
+       try {
+        const order = (
           await OrderService.createOrder({
             
             name: customerName,
@@ -201,12 +205,28 @@ export default {
           })  
         ).data;
             console.log(order);
-        
+          
 
  
       } catch (error) {
         console.log(error.response.data.error);
       }
+        
+      try {
+        for (i = 0; i < this.checkoutProduct.length; i++) {
+        const orderitem =(await OrderItemService.createOrderItem({
+            quantity: this.checkoutProduct[i].quantity,
+            ProductId : this.checkoutProduct[i].productId,
+            OrderId : this.order.id,
+        })).data; 
+        console.log(orderitem);
+      }
+      
+      }catch (error) {
+        console.log(error.response.data.error);
+      }
+      
+
     },
   },
 };
