@@ -12,7 +12,7 @@
           {{ orderInfo.shippingCost }} {{ orderInfo.currency }}
           <hr />
           <h6 class="mt-4 font-weight-bold">Total amount</h6>
-          {{ orderInfo.productCost + orderInfo.shippingCost }}
+          {{ parseFloat(orderInfo.productCost) + parseFloat(orderInfo.shippingCost) }}
           {{ orderInfo.currency }}
           <hr />
         </b-col>

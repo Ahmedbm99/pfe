@@ -53,7 +53,7 @@
               <b-col cols="3">{{ order.name }}</b-col>
               <b-col cols="3">{{ order.email }}</b-col>
               <b-col cols="2">
-                {{ parseInt(order.productCost) + parseInt(order.shippingCost) }} {{ order.currency }}
+                {{ parseFloat(order.productCost) + parseFloat(order.shippingCost) }} {{ order.currency }}
               </b-col>
               <b-col cols="3" class="text-center">
                 <b-row>

@@ -8,7 +8,7 @@ export const CheckoutModule = {
         phoneNo: "",
         address: {
           line1: "",
-          line2: "",
+          
           PostalCode: "",
           city: "",
          
@@ -30,9 +30,7 @@ export const CheckoutModule = {
       SET_CUSTOMER_ADDRESS_LINE1(state, line1) {
         state.customerDetails.address.line1 = line1;
       },
-      SET_CUSTOMER_ADDRESS_LINE2(state, line2) {
-        state.customerDetails.address.line2 = line2;
-      },
+     
       SET_CUSTOMER_ADDRESS_POSTAL_CODE(state, PostalCode) {
         state.customerDetails.address.PostalCode = PostalCode;
       },
@@ -50,7 +48,7 @@ export const CheckoutModule = {
         commit("SET_CUSTOMER_EMAIL", "");
         commit("SET_CUSTOMER_PHONE_NO", "");
         commit("SET_CUSTOMER_ADDRESS_LINE1", "");
-        commit("SET_CUSTOMER_ADDRESS_LINE2", "");
+       
         commit("SET_CUSTOMER_ADDRESS_POSTAL_CODE", "");
         commit("SET_CUSTOMER_ADDRESS_CITY", "");
       
@@ -64,7 +62,7 @@ export const CheckoutModule = {
           !phoneNoFormat.test(state.customerDetails.phoneNo) ||
           !emailFormat.test(state.customerDetails.email) ||
           state.customerDetails.address.line1 == "" ||
-          state.customerDetails.address.line2 == "" ||
+          
           state.customerDetails.address.postalCode == "" ||
           state.customerDetails.address.city == "" ||
           state.customerDetails.address.division == "" ||
@@ -104,9 +102,7 @@ export const CheckoutModule = {
       setCustomerAddressLine1({ commit }, line1) {
         commit("SET_CUSTOMER_ADDRESS_LINE1", line1);
       },
-      setCustomerAddressLine2({ commit }, line2) {
-        commit("SET_CUSTOMER_ADDRESS_LINE2", line2);
-      },
+   
       setCustomerAddressPostalCode({ commit }, PostalCode) {
         commit("SET_CUSTOMER_ADDRESS_POSTAL_CODE", PostalCode);
       },
