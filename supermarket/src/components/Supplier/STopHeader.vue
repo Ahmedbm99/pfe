@@ -1,6 +1,6 @@
 <template>
     <div>
-      <b-navbar toggleable="md" type="provider" variant="info">
+      <b-navbar toggleable="md" type="dark" variant="info">
         <b-navbar-brand href="/">EShopping
           <img :src="companyLogo" />
         </b-navbar-brand>

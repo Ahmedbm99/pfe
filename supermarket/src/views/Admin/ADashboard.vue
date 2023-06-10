@@ -11,8 +11,8 @@
       </b-row>
     </b-container>
     <div>
-   <section id="container" style="height: 750px"/>
-  </div>
+      <iframe title="rapportv2" width="1480" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiMWRmMGQyNTctZjcxNy00NGYxLWJiY2MtMThmN2M2OWM4ODZmIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
       <MyFooter class="mt-5" />
     </div>
   </template>
@@ -41,11 +41,13 @@
      type: 'dashboard',
      tokenType: pbi.models.TokenType.Embed,
      accessToken:"true",
-     embedUrl: "https://app.powerbi.com/reportEmbed?reportId=2e182efc-2f2c-4fd1-a6b4-1a1a64b48726",
-     id: "dbd6664d-4eb9-46eb-99d8-5c43ba153c61",
+     embedUrl: "https://app.powerbi.com/view?r=eyJrIjoiMWRmMGQyNTctZjcxNy00NGYxLWJiY2MtMThmN2M2OWM4ODZmIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9",
+     id: "603104f7-5845-4adc-9536-5c972fc0ba67",
      pageView: 'fitToWidth',
      permissions: permissions,
    };
+
+   
 
    let powerbi = new pbi.service.Service(pbi.factories.hpmFactory, pbi.factories.wpmpFactory, pbi.factories.routerFactory);
    const dashboardContainer = document.getElementById('container');
