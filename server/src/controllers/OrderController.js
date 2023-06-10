@@ -7,7 +7,17 @@ module.exports = {
 	async getOrderList(req, res) {
 		try {
 			const orderList = await Order.findAll({
-				order: [['createdAt', 'DESC']]
+				order: [['createdAt', 'DESC']],
+				attributes: ["id",
+							"status",
+							"address",
+							"name",
+							"productCost",
+							"currency",
+							"phoneNo",
+							"shippingCost",
+							"createdAt",
+							"email"]
 			});
 			res.send(orderList)
 		} catch (err) {
@@ -18,7 +28,18 @@ module.exports = {
 	},
 	async getOrder(req, res) {
 		try {
-			const order = await Order.findByPk(req.params.orderId)
+			const order = await Order.findByPk(req.params.orderId,{
+				attributes: ["id",
+							"status",
+							"address",
+							"name",
+							"productCost",
+							"currency",
+							"phoneNo",
+							"shippingCost",
+							"createdAt",
+							"email"]
+			})
 			res.send(order)
 		} catch (err) {
 			res.status(500).send({
@@ -30,7 +51,17 @@ module.exports = {
 		try {
 			const order = await Order.findOne({
 				where: {
-					checkoutSessionId: req.params.sessionId
+					checkoutSessionId: req.params.sessionId,
+					attributes: ["id",
+							"status",
+							"address",
+							"name",
+							"productCost",
+							"currency",
+							"phoneNo",
+							"shippingCost",
+							"createdAt",
+							"email"]
 				}
 			})
 			res.send(order)

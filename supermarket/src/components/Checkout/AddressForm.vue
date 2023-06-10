@@ -70,20 +70,7 @@
                       id="nested-line1"
                     />
                   </b-form-group>
-                  <b-form-group
-                    label="Line2:"
-                    label-for="nested-line2"
-                    label-cols-sm="3"
-                    label-align-sm="right"
-                  >
-                    <b-form-input
-                      :state="line2Validation"
-                      required
-                      v-model="line2"
-                      @change="setAddressLine2"
-                      id="nested-line2"
-                    />
-                  </b-form-group>
+                  
   
                   <b-form-group
                     label="Postal Code:"
@@ -152,7 +139,7 @@
         phoneNoMin: 6,
         phoneNoMax: 20,
         line1: null,
-        line2: null,
+      
         postalCode: null,
         city: null,
         
@@ -186,14 +173,10 @@
         else if (this.line1.length == 0) return false;
         else return true;
       },
-      line2Validation() {
-        if (this.line2 == null) return null;
-        else if (this.line2.length == 0) return false;
-        else return true;
-      },
+     
       postalCodeValidation() {
-        if (this.zipCode == null) return null;
-        else if (this.zipCode.length == 0) return false;
+        if (this.postalCode == null) return null;
+        else if (this.postalCode.length == 0) return false;
         else return true;
       },
       cityValidation() {
@@ -231,11 +214,9 @@
       setAddressLine1() {
         this.$store.dispatch("Checkout/setCustomerAddressLine1", this.line1);
       },
-      setAddressLine2() {
-        this.$store.dispatch("Checkout/setCustomerAddressLine2", this.line2);
-      },
+      
       setAddressPostalCode() {
-        this.$store.dispatch("Checkout/setCustomerAddressPostalCode", this.zipCode);
+        this.$store.dispatch("Checkout/setCustomerAddressPostalCode", this.postalCode);
       },
       setAddressCity() {
         this.$store.dispatch("Checkout/setCustomerAddressCity", this.city);

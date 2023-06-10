@@ -63,12 +63,7 @@
               <b-row class="mt-2" v-if="orderStatus == 'complete'">
                 <b-col>
                   <small>
-                    We don't allow anyone to delete any order information. If you
-                    delete this order from here this same order could be retrieve
-                    from stripe by using given checkout session id. We didn't find
-                    any way to delete order information from stripe yet. If we
-                    find a way to solve this issue we may update it. Until then
-                    please wait.
+                    We don't allow anyone to delete any order information.
                   </small>
                 </b-col>
               </b-row>

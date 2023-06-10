@@ -20,7 +20,7 @@
               <strong>Email</strong>
             </b-col>
             <b-col cols="2">
-              <strong>Order Price</strong>
+              <strong>Order        Price</strong>
             </b-col>
             <b-col cols="3" class="text-center">
               <strong>Status</strong>
@@ -53,7 +53,7 @@
               <b-col cols="3">{{ order.name }}</b-col>
               <b-col cols="3">{{ order.email }}</b-col>
               <b-col cols="2">
-                {{ order.productCost + order.shippingCost }} {{ order.currency }}
+                {{ parseInt(order.productCost) + parseInt(order.shippingCost) }} {{ order.currency }}
               </b-col>
               <b-col cols="3" class="text-center">
                 <b-row>
