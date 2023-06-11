@@ -84,6 +84,7 @@
     <b-row class="mt-4" v-if="subTotalAmount != 0">
       <b-col cols="5">
         <b-button block variant="warning" to="/cart-view">Edit Cart</b-button>
+     
       </b-col>
       <b-col cols="2" />
       <b-col>
@@ -95,13 +96,17 @@
           
           >
           <b-icon icon="cursor-fill" />
-          Pay Now
+          Check Purchase
         </b-button>
+       
+      
         <b-button v-if="payBtnSpin" @click="checkoutApplied"   block variant="success">
-          Processing...
-          <b-spinner small variant="light"></b-spinner>
+          Checking...
+          <b-icon-check small variant="light"></b-icon-check>
         </b-button>
+        <b-button block variant="success" to="/successful">Confirmed</b-button>
       </b-col>
+
     </b-row>
     <b-row v-if="subTotalAmount == 0">
       <b-col class="text-center">
@@ -143,6 +148,7 @@ export default {
         this.checkoutProduct[i].amount * this.checkoutProduct[i].quantity;
     }
     this.totalAmount = this.subTotalAmount + this.shippingRate;
+   
   },
   methods: {
     async checkoutApplied() {
@@ -200,7 +206,7 @@ export default {
             checkoutSessionId: 16,
             productCost: this.totalAmount,
             currency :"TND",
-            shippingCost: this.shipping ,
+            shippingCost: 4.000,
 
           })  
         ).data;
@@ -228,6 +234,7 @@ export default {
       
 
     },
+   
   },
 };
 </script>
