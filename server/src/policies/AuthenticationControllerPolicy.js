@@ -36,13 +36,7 @@ module.exports = {
                         `
                     })
                     break
-                case 'NumeroTelephone':
-                    res.status(400).send({
-                        error: `Invalid Numero Telephone format<br>
-                        
-                        Only numbers are allowed and .
-                    `
-                    })
+            
                 default:
                     res.status(400).send({
                         error: 'Invalid error in authentication controller.'
