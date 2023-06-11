@@ -6,9 +6,9 @@
             class="py-3"
             toggleable="lg"
             type="dark"
-            style="background-color: #00283a"
+            style="background-color: #8e9aaf"
           >
-            <b-navbar-brand href="/">EShopping
+            <b-navbar-brand href="/">_EShopping
               <b-img :src="companyLogo" />
             </b-navbar-brand>
             <b-navbar-toggle target="nav-top-header-collapse" />
@@ -17,7 +17,7 @@
                 <b-dropdown
                   id="dropdown-right"
                   :text="searchCategoryName"
-                  style="background-color: #fff"
+                  style="background-color: #8e9aaf"
                   variant="transparent"
                   class="mr-auto"
                 >

@@ -1,8 +1,8 @@
 <template>
-    <div style="background-color: #17a2b8">
+    <div style="background-color: #99a1d0">
       <b-row align-v="center" class="text-center">
         <b-col>
-          <b-button
+          <b-button 
             class="ml-4"
             variant="transparent"
             v-b-toggle.categorycollapse
@@ -13,6 +13,7 @@
         <b-col cols="10">
           <b-row>
             <b-col
+            
               cols="2"
               v-for="category in categoryListRow1"
               :key="category.id"
@@ -23,7 +24,7 @@
                 @click="categorySelect(category)"
                 id="dropdown-category"
                 :text="category.name"
-                variant="info"
+                variant= #99a1d0
                 block
               >
                 <div v-for="subCategory in subCategoryList" :key="subCategory.id">
@@ -85,7 +86,7 @@
                 split
                 id="dropdown-category"
                 :text="category.name"
-                variant="info"
+                variant=#99a1d0
                 block
               >
                 <div v-for="subCategory in subCategoryList" :key="subCategory.id">

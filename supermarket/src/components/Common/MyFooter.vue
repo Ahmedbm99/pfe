@@ -1,5 +1,5 @@
 <template>
-    <div style="background: #1f2e50; color: #ffffff">
+    <div style="background: #8e9aaf; color: #ffffff">
       <b-container class="pb-4">
         <b-row class="pt-5 pb-4">
           <b-col cols="5">
@@ -11,8 +11,8 @@
           </b-col>
           <b-col cols="3">
             <h3>Links</h3>
-            <b-link href="/profile">Your Account</b-link><br />
-            <b-link href="/*">Terms &amp; Conditions</b-link><br />
+            <b-link href="/profile" style="color:#fff">Your Account</b-link><br />
+            <b-link href="/*" style="color:#fff">Terms &amp; Conditions</b-link><br />
           
           </b-col>
           <b-col cols="4">
