@@ -92,12 +92,12 @@
           @click="checkoutApplied"
           block
           variant="success"
-          to="/Successful"
+          
           >
           <b-icon icon="cursor-fill" />
           Pay Now
         </b-button>
-        <b-button v-if="payBtnSpin" @click="checkoutApplied"  to="/Successful" block variant="success">
+        <b-button v-if="payBtnSpin" @click="checkoutApplied"   block variant="success">
           Processing...
           <b-spinner small variant="light"></b-spinner>
         </b-button>
@@ -131,7 +131,7 @@ export default {
       shippingRate: this.$store.state.Checkout.shippingRate,
       totalAmount: 0,
       checkoutProduct: null,
-      orderid : 1, 
+      orderid : 4, 
       };
   },
   computed: {},
@@ -195,7 +195,7 @@ export default {
             email: customerEmail,
             phoneNo: customerPhoneNo,
             address: shippingAddress,
-            status: "in the process ",
+            status: "preparing",
             variant: "dark",
             checkoutSessionId: 16,
             productCost: this.totalAmount,

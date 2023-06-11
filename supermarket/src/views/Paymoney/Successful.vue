@@ -29,10 +29,9 @@
   <script>
   import TopHeader from "@/components/Common/TopHeader.vue";
   import MyFooter from "@/components/Common/MyFooter.vue";
-  import CheckoutService from "@/services/CheckoutService.js";
   import OrderService from "@/services/OrderService.js";
   import OrderItemService from "@/services/OrderItemService.js";
-  import ProductsService from "@/services/ProductsService.js";
+ 
   export default {
     name: "Successful",
     components: {
@@ -44,93 +43,64 @@
         order: {},
         session: {},
         validSession: false,
+        name:null,
+        email:null,
+        address:null,
+        status:null,
+        variant:null,
+        checkoutSessionId:null,
+        productCost:null,
+        currency:"TND",
+        shippingCost:null,
       };
     },
-    async mounted() {
-
-      const sessionId =this.$route.query.id;
-      
-      var previousOrder;
-      try {
-        previousOrder = (await OrderService.getOrderBySessionId(sessionId)).data;
-      } catch (error) {
-        console.log(error.response.data.error);
-      }
-     if (previousOrder) return;
-      this.$store.dispatch("Cart/clearCart");
-      try {
-        this.session = (
-          await CheckoutService.retrieveCheckoutSession(sessionId)
-        ).data;
-        this.validSession = Object.keys(this.session).length != 0;
-        console.log(this.validSession);
-      } catch (error) {
-        console.log(error.response.data.error);
-      }
-      if (!this.validSession) return;
-     console.log(this.session);
-      const lineItems = this.session.line_items.data;
-      const shipCost = lineItems[lineItems.length - 1].amount_total;
-      console.log(shipCost + " i'm here now " + lineItems );
-      try {
-        
-        this.order = (
-          await OrderService.createOrder({
-            name: this.session.metadata.customerName,
-            phoneNo: this.session.metadata.customerPhoneNo,
-            email: this.session.customer_email,
-            address: this.session.metadata.shippingAddress,
-            status: "in the process ",
-            variant: "dark",
-            checkoutSessionId: sessionId,
-            productCost: (this.session.amount_total - 4) / 100,
-            currency: this.session.currency.toUpperCase(),
-            shippingCost: 4,
-          })
-        ).data;
-      } catch (error) {
-        console.log(error.response.data.error);
-      }
-  
-      var i;
-      for (i = 0; i < lineItems.length - 1; i++) {
-        var productId;
-        try {
-          productId = (
-            await ProductsService.getProductId(
-              encodeURIComponent(lineItems[i].description)
-            )
-          ).data;
-        } catch (error) {
-          console.log(error.response.data.error);
-        }
-        try {
-          await OrderItemService.createOrderItem({
-            quantity: lineItems[i].quantity,
-            ProductId: productId,
-            OrderId: this.order.id,
-          });
-        } catch (error) {
-          console.log(error.response.data.error);
-        }
-        var lineproduct;
-        try {
-          lineproduct = (await ProductsService.getProductSales(productId)).data;
-        } catch (error) {
-          console.log(error.response.data.error);
-        }
-        try {
-          await ProductsService.updateProduct({
-            id: productId,
-            sales: lineproduct.sales + lineItems[i].quantity,
-          });
-        } catch (error) {
-          console.log(error.response.data.error);
-        }
-      }
-    },
-    methods: {},
     computed: {},
+     mounted() {},
+    methods: {
+
+      
+        async newOrder(req , res){
+          try { 
+          const order = ( await OrderService.createOrder({
+            name: req.body.customerName,
+            email: req.body.customerEmail,
+            phoneNo: req.body.customerPhoneNo,
+            address: req.body.shippingAddress,
+            status: "preparing",
+            variant: "dark",
+            checkoutSessionId: 16,
+            productCost: req.body.totalAmount ,
+            currency :"TND",
+            shippingCost: req.body.shipping ,
+
+          })  
+        ).data;
+        res(order);
+            console.log(order);
+          
+
+ 
+      } catch (error) {
+        console.log(error.response.data.error);
+      }
+        
+      try {
+        for (let i = 0; i < this.checkoutProduct.length; i++) {
+        const orderitem =(await OrderItemService.createOrderItem({
+            quantity: this.checkoutProduct[i].quantity,
+            ProductId : this.checkoutProduct[i].productId,
+            OrderId : this.order.id,
+        })).data; 
+        console.log(orderitem);
+      }
+      
+      }catch (error) {
+        console.log(error.response.data.error);
+      }
+      
+
+    }}
+   
   };
   </script>
   

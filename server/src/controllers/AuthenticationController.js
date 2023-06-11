@@ -7,9 +7,9 @@ const crypto = require("crypto")
 let emailFrom = `EShopping <${process.env.EMARKET_EMAIL}>`
 
 function jwtSignUser(user) {
-    const ONE_WEEK = 60 * 60 * 24 * 7
+    const ONE_DAY = 60 * 60 * 24 
     return jwt.sign(user, config.authentication.jwtSecret, {
-        expiresIn: ONE_WEEK
+        expiresIn: ONE_DAY
     }) 
 }
 
