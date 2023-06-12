@@ -267,7 +267,7 @@ module.exports = {
                 where: {
                     email: req.body.email
                 },
-                attributes: ["id", "firstName", "lastName", "registerToken"]
+                attributes: ["id", "firstName", "lastName", "registerToken" ,"email"]
             });
             if (!user) {
                 return res.sendStatus(404).status({
@@ -276,8 +276,11 @@ module.exports = {
             }
             var retUser = {
                 id: user.id,
-                verificationStatus: true
+                verificationStatus: true,
+                email: user.email
             }
+            
+            console.log(user.registerToken);
             if (user.registerToken) {
                 retUser.verificationStatus = false
                 var transporter = await nodemailer.createTransport({
@@ -300,7 +303,8 @@ module.exports = {
                         'Use this code to complete the registration process.\n\n' +
                         'Enjoy using you EShopping account!\n'
                 }
-                await transporter.sendMail(mailOptions, function (err) {
+                 await transporter.sendMail(mailOptions, function (err) {
+                    
                     if (err) {
                         return res.status(403).send({
                             error: "An error occured when trying to send an email to register."
@@ -308,7 +312,7 @@ module.exports = {
                     } 
                 });
             }
-
+            
             res.send(retUser)
         } catch (err) {
             return res.status(500).send({

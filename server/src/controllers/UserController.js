@@ -50,6 +50,7 @@ module.exports = {
     },
     async getUserById(req, res) {
         try {
+        
             const user = await User.findByPk(req.params.userId, {
                 attributes: [
                     "id",

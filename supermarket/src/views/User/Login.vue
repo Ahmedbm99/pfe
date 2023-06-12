@@ -91,6 +91,7 @@
   import TopHeader from "@/components/Common/TopHeader.vue";
   import ReqPassToken from "@/components/User/ReqPassToken.vue";
   import MyFooter from "@/components/Common/MyFooter.vue";
+
   export default {
     name: "Login",
     components: {
@@ -113,14 +114,18 @@
     },
     methods: {
       async login() {
-        var user;
+        var user 
         try {
-          user = (
-            await AuthenticationService.checkRegsToken({
+          
+          user = ( await AuthenticationService.checkRegsToken({
               email: this.email,
             })
           ).data;
+          
         } catch (error) {
+        
+          console.log(user)
+          console.log(error);
           this.emailValidation = false;
           this.invalidEmailMessage = "User not found.";
           return;

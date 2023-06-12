@@ -11,7 +11,7 @@
       </b-row>
     </b-container>
     <div>
-      <iframe title="rapportv2" width="1480" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiMWRmMGQyNTctZjcxNy00NGYxLWJiY2MtMThmN2M2OWM4ODZmIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+      <iframe position="center" title="rapportv2" width="2000" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiMWRmMGQyNTctZjcxNy00NGYxLWJiY2MtMThmN2M2OWM4ODZmIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
     </div>
       <MyFooter class="mt-5" />
     </div>

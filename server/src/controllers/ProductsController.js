@@ -31,7 +31,7 @@ module.exports = {
       const limit = req.params.limit;
       const products = await Product.findAll({
         limit: parseInt(limit),
-        order: [["sales", "ASC"]],
+        order: [["id", "DESC"]],
         attributes: [
           "id",
           "title",

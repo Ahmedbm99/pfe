@@ -10,7 +10,7 @@
         </b-row>
       </b-container>
       <div> 
-        <iframe title="Report Section" width="1480" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiNjA0ODZhNjAtM2NlNC00ZDNkLTg3MTctOGVkMDk0NTZmOGVkIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+        <iframe title="Report Section" width="2000" height="1500" src="https://app.powerbi.com/view?r=eyJrIjoiNjA0ODZhNjAtM2NlNC00ZDNkLTg3MTctOGVkMDk0NTZmOGVkIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
       </div>
       <MyFooter class="mt-5" />
     

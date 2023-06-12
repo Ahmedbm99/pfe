@@ -68,7 +68,7 @@
             address: req.body.shippingAddress,
             status: "preparing",
             variant: "dark",
-            checkoutSessionId: 16,
+            checkoutSessionId: 25,
             productCost: req.body.totalAmount ,
             currency :"TND",
             shippingCost: req.body.shipping ,
