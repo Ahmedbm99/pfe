@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       commission:             DataTypes.FLOAT,
 
-      StartDate:             DataTypes.DATE,
-      EndDate:         DataTypes.DATE,
+      startDate:             DataTypes.DATE,
+      endDate:         DataTypes.DATE,
       
     })
     Contract.associate = function (models) {

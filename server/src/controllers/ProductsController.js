@@ -168,8 +168,8 @@ module.exports = {
         },
         attributes: ["id"]
       });
-     
-      res.send(product.id);
+     console.log(product.id);
+      res.send(product);
     } catch (err) {
       res.status(500).send({
         error: "An error occured when trying to fetch a product.",

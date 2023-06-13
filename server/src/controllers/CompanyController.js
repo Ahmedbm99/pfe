@@ -48,6 +48,7 @@ module.exports = {
 			const contract = await Contract.create(req.body);
 			res.send(contract);
 		}catch(err) {
+			
 		res.status(500).send({
 			error : 'An error occured when trying to create contract.'
 		})
@@ -57,16 +58,16 @@ module.exports = {
 		try{
 			const company = await Company.findOne({
                 where: {
-                    name: req.params.name
+                    name: req.params.companyName
                 },
-                attributes: ['id']
+                attributes: ['id'],
             })
 			if (!company) {
                 return res.status(403).send({
                     error: "Company not found."
                 })
             }
-            res.send(company.id)
+            res.send(company)
         } catch (error) {
             res.status(500).send({
                 error: "An error occured when trying to get a company."

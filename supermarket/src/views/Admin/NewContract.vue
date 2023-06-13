@@ -140,13 +140,13 @@ import ProductsService from '../../services/ProductsService';
         formatName: /^^[a-zA-Z]{1,15}$/,
         commission: null,
         companyName:  null,
-        commissionF: null,
+        
         
         productTitle: null,
       };
     },
     mounted() {
-      this.commissionF = parseFloat(this.commission)
+      
     },
     computed: {
       tokenAlert() {
@@ -187,7 +187,7 @@ import ProductsService from '../../services/ProductsService';
           const contract = await CompanyService.createContract({
             startDate: this.startDate,
             endDate: this.endDate,
-            commission: this.commissionF,
+            commission: parseFloat(this.commission),
           
             CompanyId: companyId,
             ProductId: productId,
