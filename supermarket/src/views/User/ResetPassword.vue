@@ -126,8 +126,9 @@
     async mounted() {
       const token = this.$route.params.token;
       try {
-        const user = (await AuthenticationService.verifyPasswordToken(token))
-          .data;
+       
+        var user = (await AuthenticationService.verifyPasswordToken(token)).data;
+        
         this.userId = user.id;
         this.name = user.firstName + " " + user.lastName;
         this.email = user.email;
@@ -141,7 +142,15 @@
         if (!this.newPasswordValidation || !this.confirmPasswordValidation)
           return;
         try {
+          this.$bvToast.toast("Password has changed successfully", {
+            title: "Password has changed successfully",
+            variant: "success",
+            toaster: "b-toaster-top-center",
+            noCloseButton: false,
+            solid: true,
+          });
           await AuthenticationService.resetPassword({
+            
             id: this.userId,
             email: this.email,
             name: this.name,
@@ -155,6 +164,7 @@
             email: this.email,
             password: this.newPassword,
           });
+          console.log(response.data.token);
           this.$store.dispatch("CurrentUser/setToken", response.data.token);
           this.$store.dispatch("CurrentUser/setUser", response.data.user);
           this.$store.dispatch("Wishlist/setWishlist");

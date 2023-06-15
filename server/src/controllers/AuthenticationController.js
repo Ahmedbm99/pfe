@@ -213,7 +213,7 @@ module.exports = {
                 subject: "Reset Password Confirmation",
                 text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
                     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-                    'http://' + 'localhost:8080' + '/reset-password/' + token + '\n\n' +
+                    'http://' + '127.0.0.1:8080' + '/reset-password/' + token + '\n\n' +
                     'If you did not request this, please ignore this email and your password will remain unchanged.\n'
             }
             await transporter.sendMail(mailOptions, function (err) {
@@ -232,6 +232,7 @@ module.exports = {
     },
     async verifyPasswordToken(req, res) {
         try {
+            console.log(req.params.token)
             const user = await User.findOne({
                 where: {
                     resetPasswordToken: req.params.token
@@ -245,6 +246,7 @@ module.exports = {
                     "email",
                     "userType",
                     "variant",
+                    
                     "priority",
                     "CompanyId"
                 ]
@@ -254,7 +256,8 @@ module.exports = {
                     error: "invalid token."
                 })
             }
-            res.send(user)
+          
+            res.send(user.dataValues)
         } catch (err) {
             return res.status(500).send({
                 error: "An error occured when verifying the password reset token."
@@ -370,8 +373,10 @@ module.exports = {
 
     async resetPassword(req, res) {
         try {
+            
             const user = { password: req.body.password, resetPasswordToken: "" }
             const userId = req.body.id
+            console.log(userId)
             await User.update(user, {
                 where: {
                     id: userId
@@ -403,6 +408,7 @@ module.exports = {
             });
             res.send(userId)
         } catch (err) {
+            
             res.status(500).send({
                 error: "An error occured when trying to reset password."
             })
