@@ -38,6 +38,7 @@
         default: "",
         type: String,
       },
+      sales: Number,
       buttonType: String,
       productId: Number,
       currency: String,
@@ -61,6 +62,7 @@
     methods: {
       async addToCart() {
         const cartItem = {
+          sales: this.sales,
           productId: this.productId,
           title: this.title,
           image: this.image,

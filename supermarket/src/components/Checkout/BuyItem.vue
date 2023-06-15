@@ -100,9 +100,15 @@
         </b-button>
        
       
-        <b-button v-if="payBtnSpin" @click="checkoutApplied"   block variant="success">
+        <b-button v-if="payBtnSpin && quantityValidation"  @click="checkoutApplied"   block variant="success">
           Checking...
           <b-icon-check small variant="light"></b-icon-check>
+          
+        </b-button>
+        <b-button v-if="payBtnSpin && !quantityValidation"  @click="checkoutApplied"   block variant="success">
+          Quantity is not available
+          <b-icon-x small variant="light"></b-icon-x>
+          
         </b-button>
         <b-button block variant="success" to="/successful">Confirmed</b-button>
       </b-col>
@@ -137,6 +143,7 @@ export default {
       totalAmount: 0,
       checkoutProduct: null,
       orderid : 4, 
+      quantityValidation : true,
       };
   },
   computed: {},
@@ -151,6 +158,9 @@ export default {
    
   },
   methods: {
+
+
+
     async checkoutApplied() {
       const response = await this.$store.dispatch(
         "Checkout/informationValidate"
@@ -193,6 +203,19 @@ export default {
         
        
        try {
+        for (i = 0; i < this.checkoutProduct.length; i++) {
+          if(this.checkoutProduct[i].quantity != this.checkoutProduct[i].sales){
+            this.quantityValidation = false;
+            this.$bvToast.toast("Quantity not available", {
+            title: "Quantity not available",
+            variant: "warning",
+            toaster: "b-toaster-top-center",
+            noCloseButton: false,
+            solid: true,
+          });
+          }
+        } 
+        if (this.quantityValidation){
         const order = (
           await OrderService.createOrder({
             
@@ -213,7 +236,7 @@ export default {
             console.log(order);
           
 
- 
+        }
       } catch (error) {
         console.log(error.response.data.error);
       }
@@ -232,9 +255,9 @@ export default {
         console.log(error.response.data.error);
       }
       
-
+      
     },
-   
+  
   },
 };
 </script>

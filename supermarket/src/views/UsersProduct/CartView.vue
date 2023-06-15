@@ -10,7 +10,7 @@
         </b-row>
         <b-row v-if="cartItemCount == 0">
           <b-col>
-            empty cart!!!
+            empty cart!
             <hr />
           </b-col>
         </b-row>

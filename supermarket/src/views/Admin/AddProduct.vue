@@ -59,7 +59,7 @@
                 <div>
                   <b-form-group
                     id="input-sales"
-                    label="sales"
+                    label="Quantity"
                     label-for="input-sales"
                     
                   > <b-form-input
