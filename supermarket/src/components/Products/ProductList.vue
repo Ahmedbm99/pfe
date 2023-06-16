@@ -3,12 +3,12 @@
      
       <b-row>
         <b-col cols="4" v-for="product in displayProducts1" :key="product.id">
-          <b-card-group deck>
+          <b-card-group deck  style ="height: 500px;  ">
             <b-card img-top style="max-width: 25rem" class="mb-4">
               <b-card-img
+              style ="height: 300px; "
                 @click="$router.push({ path: `/product/${product.id}` })"
                 :src="product.image1"
-                style="max-width: 25rem; max-height: 25rem"
                 alt="Image Not Found"
               />
               <div class="mt-2">

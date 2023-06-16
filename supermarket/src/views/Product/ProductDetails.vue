@@ -147,12 +147,10 @@
                       <b-icon-cart-fill />
                       Buy Now
                     </b-button>
-                    <b-button v-if="user.priority==1" to="/update-Product">
+                    <b-button @click="Update">
                     Update
                   </b-button>
-                  <b-button v-if="user.priority==2" to="/update-product">
-                    Update
-                  </b-button>
+                  
                   </b-col>
                 </b-row>
               </div>
@@ -240,6 +238,15 @@
       },
       changeImage(image) {
         this.current_image = image;
+      },
+      async Update() {
+        const productId  = this.displayProduct.id 
+          
+        if (this.user.priority == 2) {
+         
+         this.$router.push(`/Supplier-update-product/${productId}`);
+        }else
+         this.$router.push(`/Admin-update-product/${productId}`);
       },
       async buyNow() {
         const buyProduct = {

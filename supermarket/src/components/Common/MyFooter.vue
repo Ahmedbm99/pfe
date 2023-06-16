@@ -1,6 +1,6 @@
 <template>
-    <div style="background: #8e9aaf; color: #ffffff">
-      <b-container class="pb-4">
+    <div style="background: #023047; color: #ffffff">
+      <b-container class="pb-11">
         <b-row class="pt-5 pb-4">
           <b-col cols="5">
             <h2>
@@ -55,7 +55,7 @@
   
   <style scoped lang="scss">
   #footer {
-    bottom: 0px;
+    bottom: 10px;
   }
   </style>
   

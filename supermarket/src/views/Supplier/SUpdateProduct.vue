@@ -1,6 +1,6 @@
 <template>
     <div>
-      <ATopHeader />
+      <STopHeader />
   
       <b-container class="mt-4">
         <b-card>
@@ -228,13 +228,13 @@
   import CategoryService from "@/services/CategoryService.js";
   import SubCategoryService from "@/services/SubCategoryService.js";
   import SubSubCategoryService from "@/services/SubSubCategoryService.js";
-  import ATopHeader from "@/components/Admins/ATopHeader.vue";
+  import STopHeader from "@/components/Supplier/STopHeader.vue";
   import MyFooter from "@/components/Common/MyFooter.vue";
   import { VueEditor } from "vue2-editor";
   export default {
     name: "EditProduct",
     components: {
-      ATopHeader,
+      STopHeader,
       VueEditor,
       MyFooter,
     },
@@ -300,13 +300,16 @@
           });
       },
       fetchProduct() {
-        const productId = this.$route.params.id;
+        const productId = this.$route.params.productId;
+        console.log(productId);
         ProductsService.getProduct(productId)
           .then((response) => {
+            console.log(response);
             this.product = response.data;
             this.selectedCategory = this.product.Category.name;
             this.selectedSubCategory = this.product.SubCategory.name;
             this.selectedSubSubCategory = this.product.SubSubCategory.name;
+            
           })
           .catch((error) => {
             console.log(error);

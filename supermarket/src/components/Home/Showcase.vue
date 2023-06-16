@@ -7,47 +7,23 @@
             :interval="4000"
             controls
             indicators
-            img-width="1024"
-            img-height="480"
+            img-width="1440"
+            img-height="720"
           >
             <b-carousel-slide
               v-for="showcaseSlide in showcaseSlides"
               :key="showcaseSlide.id"
               :caption="showcaseSlide.caption"
+              
             >
               <template #img>
-                <img class="img-fluid w-100" :src="showcaseSlide.image" />
+                <img class="img-fluid w-100" :src="showcaseSlide.image" style ="height:300px; width: 720px ;" />
               </template>
             </b-carousel-slide>
           </b-carousel>
         </b-col>
       </b-row>
-      <b-row class="mt-5">
-        <b-col
-          v-for="showcaseCard in showcaseCards"
-          :key="showcaseCard.id"
-          cols="3"
-        >
-          <b-img
-            fluid
-            @click="$router.push({ path: showcaseCard.routerLink })"
-            :src="showcaseCard.image"
-          />
-        </b-col>
-      </b-row>
-      <b-row class="mt-5">
-        <b-col
-          v-for="showcaseBigCard in showcaseBigCards"
-          :key="showcaseBigCard.id"
-          cols="6"
-        >
-          <b-img
-            fluid
-            @click="$router.push({ path: showcaseBigCard.routerLink })"
-            :src="showcaseBigCard.image"
-          />
-        </b-col>
-      </b-row>
+  
     </div>
   </template>
   

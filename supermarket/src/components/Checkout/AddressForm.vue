@@ -57,7 +57,7 @@
                   class="mb-0"
                 >
                   <b-form-group
-                    label="Line1:"
+                    label="Line:"
                     label-for="nested-line1"
                     label-cols-sm="3"
                     label-align-sm="right"

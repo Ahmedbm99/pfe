@@ -13,8 +13,9 @@
                   />
                   <br />
                   <h5 class="mt-1">
-                    <a style="text-decoration: none" href="#customer-support"
-                      >Fast Delivery</a
+                    <a style="text-decoration: none; color: #000;" href="#customer-support"
+                      >Fast Delivery <br>
+                      From the supermarket to your door.</a
                     >
                   </h5>
                 </b-card>
@@ -30,8 +31,9 @@
                   />
                   <br />
                   <h5 class="mt-1">
-                    <a style="text-decoration: none" href="#customer-support"
-                      >Support 24 Hours</a
+                    <a style="text-decoration: none;color: #000; "  href="#customer-support"
+                      >Support 24 Hours <br>
+                      A satisfied customer is our purpose.</a
                     >
                   </h5>
                 </b-card>

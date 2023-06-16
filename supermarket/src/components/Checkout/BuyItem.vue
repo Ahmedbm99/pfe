@@ -204,7 +204,7 @@ export default {
        
        try {
         for (i = 0; i < this.checkoutProduct.length; i++) {
-          if(this.checkoutProduct[i].quantity != this.checkoutProduct[i].sales){
+          if(this.checkoutProduct[i].quantity == this.checkoutProduct[i].sales){
             this.quantityValidation = false;
             this.$bvToast.toast("Quantity not available", {
             title: "Quantity not available",

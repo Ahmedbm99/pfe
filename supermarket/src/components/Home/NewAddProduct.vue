@@ -6,8 +6,9 @@
           <hr />
           <b-row>
             <b-col cols="3" v-for="product in newAddProduct" :key="product.id">
-              <b-card deck class="mt-4">
+              <b-card deck class="mt-4" style ="height: 450px;  " >
                 <b-card-img
+                  style ="height: 250px; "
                   @click="$router.push({ path: `/product/${product.id}` })"
                   :src="product.image1"
                 />

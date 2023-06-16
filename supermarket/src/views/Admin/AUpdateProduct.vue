@@ -300,10 +300,13 @@
           });
       },
       fetchProduct() {
-        const productId = this.$route.params.id;
+        const productId = this.$route.params.productId;
+        console.log(productId);
         ProductsService.getProduct(productId)
           .then((response) => {
             this.product = response.data;
+           
+            
             this.selectedCategory = this.product.Category.name;
             this.selectedSubCategory = this.product.SubCategory.name;
             this.selectedSubSubCategory = this.product.SubSubCategory.name;

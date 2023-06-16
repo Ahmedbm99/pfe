@@ -31,6 +31,7 @@ import SProfile from "@/views/Supplier/SProfile.vue";
 import SDashboard from "@/views/Supplier/SDashboard.vue";
 import AddSupplier from "@/views/Admin/AddSupplier.vue";
 import AUpdateProduct from "@/views/Admin/AUpdateProduct.vue"
+import SUpdateProduct from "@/views/Supplier/SUpdateProduct.vue"
 import NewContract from "@/views/Admin/NewContract.vue";
 Vue.use(VueRouter);
 
@@ -223,9 +224,15 @@ const routes = [
     meta: { title: "Unauthorized | EShopping" },
   },
   {
-    path: "/update-product",
+    path: "/Admin-update-product/:productId",
     name: "update-product",
     component: AUpdateProduct,
+    meta: { title: "Update Product | EShopping" },
+  },
+  {
+    path: "/Supplier-update-product/:productId",
+    name: "update-product",
+    component: SUpdateProduct,
     meta: { title: "Update Product | EShopping" },
   },
   {

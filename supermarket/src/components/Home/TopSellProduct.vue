@@ -4,10 +4,11 @@
         <b-col>
           <h3>{{ topSellViewTitle }}</h3>
           <hr />
-          <b-row>
-            <b-col cols="3" v-for="product in topSellProduct" :key="product.id">
-              <b-card deck class="mt-4">
-                <b-card-img
+          <b-row > 
+            <b-col cols="3" v-for="product in topSellProduct" :key="product.id" >
+              <b-card deck class="mt-4" style ="height: 450px;  ">
+                <b-card-img 
+                  style ="height: 250px; "
                   @click="$router.push({ path: `/product/${product.id}` })"
                   class="mb-3"
                   :src="product.image1"
@@ -32,7 +33,8 @@
                   </b-col>
                 </b-row>
                 <div class="d-flex justify-content-between">
-                  <AddToCart
+                  <AddToCart 
+                    
                     class="mt-2"
                     addButtonTitle="Add To Cart"
                     addedButtonTitle="In Cart"
@@ -77,8 +79,8 @@
         topSellProduct: [],
         cartComponentKey: 0,
         wishlistKey: 2,
-        topSellLimit: 8,
-        topSellViewTitle: "Top Selling Products",
+        topSellLimit: 20,
+        topSellViewTitle: "All Products",
       };
     },
     async mounted() {

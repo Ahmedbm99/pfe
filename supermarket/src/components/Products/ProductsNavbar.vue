@@ -46,32 +46,23 @@
                   class="mr-auto"
                   to="/admin/add-product"
                   v-if="admin"
-                  size="md"
+                  size="m"
                   variant="outline-dark"
-                  ></b-button>
+                  
+                  > <b-icon class="mr-1" variant="primary" icon="plus-square" />
+                </b-button>
                   <b-button
                    to="/supplier/add-product"
                   v-else-if="supplier"
-                  size="md"
-                  variant="outline-provider" 
+                  size="m"
+                  variant="outline-dark" 
                 >
                 
-                  <b-icon class="mr-2" scale="0.8" icon="plus-square" />
+                  <b-icon  class="mr-1" variant="primary" icon="plus-square" />
                   Add Product
                 </b-button>
               </b-navbar-nav>
-              <b-navbar-nav class="ml-auto">
-                <b-nav-form @submit.stop.prevent="search">
-                  <b-form-input
-                    v-model="searchText"
-                    size="sm"
-                    placeholder="Search here"
-                  />
-                  <b-button type="submit" variant="white">
-                    <b-icon icon="search"></b-icon
-                  ></b-button>
-                </b-nav-form>
-              </b-navbar-nav>
+         
             </b-collapse>
           </b-navbar>
           <hr class="m-0" />

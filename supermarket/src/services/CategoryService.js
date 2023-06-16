@@ -4,6 +4,9 @@ export default {
   getCategoryList() {
     return Api().get("/api/category/getCategoryList");
   },
+  getCategoryById(id) {
+    return Api().get(`/api/category/getCategoryById/${id}`);
+  },
   getCategoryByName(name) {
     return Api().get(`/api/category/getCategoryByName/${name}`);
   },

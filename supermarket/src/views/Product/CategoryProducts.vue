@@ -10,7 +10,7 @@
           <b-col cols="8">
             <FilterComponent />
             <hr class="my-4" />
-            <ProductList />
+            <ProductList  />
           </b-col>
           <b-col />
         </b-row>

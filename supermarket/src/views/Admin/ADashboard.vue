@@ -11,7 +11,7 @@
       </b-row>
     </b-container>
     <div>
-      <iframe position="center" title="rapportv2" width="2000" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiMWRmMGQyNTctZjcxNy00NGYxLWJiY2MtMThmN2M2OWM4ODZmIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+      <iframe  position="center" title="Report Section" width="1080" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiN2EyODZkMjgtNzVjNS00MGVhLTlmYTAtMWFlMTQ1M2IwNjNlIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
     </div>
       <MyFooter class="mt-5" />
     </div>
@@ -41,7 +41,7 @@
      type: 'dashboard',
      tokenType: pbi.models.TokenType.Embed,
      accessToken:"true",
-     embedUrl: "https://app.powerbi.com/view?r=eyJrIjoiMWRmMGQyNTctZjcxNy00NGYxLWJiY2MtMThmN2M2OWM4ODZmIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9",
+     embedUrl: "https://app.powerbi.com/view?r=eyJrIjoiN2EyODZkMjgtNzVjNS00MGVhLTlmYTAtMWFlMTQ1M2IwNjNlIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9",
      id: "603104f7-5845-4adc-9536-5c972fc0ba67",
      pageView: 'fitToWidth',
      permissions: permissions,

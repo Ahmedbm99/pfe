@@ -1,9 +1,9 @@
 <template>
     <div>
       <b-navbar toggleable="md" type="dark" variant="info">
-        <b-navbar-brand href="/"> EShopping
-          <img :src="companyLogo" />
-        </b-navbar-brand>
+        <b-navbar-brand href="/">
+              <b-img src="http://localhost:8084/public/company/EShopping/logo.png" al t="logo" width="70px" height="60px" />
+            </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="mr-auto">

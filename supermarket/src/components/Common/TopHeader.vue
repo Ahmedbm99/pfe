@@ -6,10 +6,10 @@
             class="py-3"
             toggleable="lg"
             type="dark"
-            style="background-color: #8e9aaf"
+            style="background-color: #fb8500"
           >
-            <b-navbar-brand href="/">_EShopping
-              <b-img :src="companyLogo" />
+            <b-navbar-brand href="/">
+              <b-img src="http://localhost:8084/public/company/EShopping/logo.png" al t="logo" width="70px" height="60px" />
             </b-navbar-brand>
             <b-navbar-toggle target="nav-top-header-collapse" />
             <b-collapse id="nav-top-header-collapse" is-nav>
@@ -17,12 +17,12 @@
                 <b-dropdown
                   id="dropdown-right"
                   :text="searchCategoryName"
-                  style="background-color: #8e9aaf"
+                  style="background-color: #fb8500"
                   variant="transparent"
                   class="mr-auto"
                 >
                   <b-dropdown-item
-                    variant="dark"
+                    variant="light"
                     @click="set_category({ id: 0, name: 'All Category' })"
                   >
                     All Category
@@ -42,20 +42,24 @@
                     class="mr-sm-2 searchField"
                     v-model="searchTxt"
                     placeholder="Search for products &amp; brands"
+                    
                   />
+                  <b-button type="submit"  @click="search" variant="white">
+                    <b-icon icon="search"></b-icon
+                  ></b-button>
                 </b-nav-form>
               </b-navbar-nav>
   
               <b-navbar-nav class="ml-auto">
-                <b-nav-item class="mr-auto" @click="wishlist">
-                  <div>
+                <b-nav-item class="mr-auto" @click="wishlist" >
+                  <div  style =" color: #fff">
                     <b-icon scale="0.8" icon="suit-heart" />
                     Wishlist
                   </div>
                 </b-nav-item>
                 <b-nav-item class="mr-auto" @click="cart">
-                  <div>
-                    <b-icon icon="cart2" />
+                  <div  style =" color: #fff">
+                    <b-icon icon="cart2"   />
                     Cart
                   </div>
                 </b-nav-item>
