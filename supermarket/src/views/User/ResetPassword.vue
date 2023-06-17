@@ -5,13 +5,13 @@
         <b-row class="ml-5">
           <b-col cols="10" md="8" lg="6">
             <b-card v-if="!tokenValidate">
-              <h5 class="text-center"><strong>Reset your password</strong></h5>
+              <h5 class="text-center"><strong>réinitialisez votre mot de passe</strong></h5>
               <b-alert class="mt-4" variant="warning" show>
                 <small>
-                  It looks like you clicked on an invalid password reset link.
+                  Il semble que vous ayez cliqué sur un lien de réinitialisation de mot de passe invalide.
                   <br />
                   <b-link to="/login">
-                    Login here
+                    Connectez-vous ici
                     <b-icon icon="arrow-right" />
                   </b-link>
                 </small>
@@ -19,12 +19,12 @@
             </b-card>
   
             <b-card v-if="tokenValidate" style="color: #001e5f">
-              <h4 class="font-weight-bold">Change password for {{ email }}</h4>
+              <h4 class="font-weight-bold">Changer le mot de passe pour {{ email }}</h4>
               <b-form @submit.stop.prevent="passwordReset" class="mt-4">
                 <b-form-group
                   class="font-weight-bold"
                   id="input-group-password"
-                  label="New password"
+                  label="Nouveau mot de passe"
                   label-for="input-password"
                 >
                   <b-form-input
@@ -38,15 +38,16 @@
                     v-if="newPassword"
                     :state="newPasswordValidation"
                   >
-                    Your password could be 8-32 character long, contain letters,
-                    numbers and must not contain space.
+
+                  Votre mot de passe peut être composé de 8 à 32 caractères, contenir des lettres,
+                    chiffres et ne doit pas contenir d'espace.
                   </b-form-invalid-feedback>
                 </b-form-group>
   
                 <b-form-group
                   class="font-weight-bold"
                   id="input-group-2-password"
-                  label="Confirm password"
+                  label="Confirmez le mot de passe"
                   label-for="input-2-password"
                 >
                   <b-form-input
@@ -60,7 +61,7 @@
                     v-if="confirmPassword"
                     :state="confirmPasswordValidation"
                   >
-                    Password didn't match
+                    Le mot de passe ne correspond pas
                   </b-form-invalid-feedback>
                 </b-form-group>
                 <b-row>

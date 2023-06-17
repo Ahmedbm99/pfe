@@ -4,7 +4,7 @@
       <b-container v-if="validParam">
         <b-row class="mt-4">
           <b-col class="text-center">
-            <h3>Online Order Status</h3>
+            <h3>Statut de la commande en ligne</h3>
           </b-col>
         </b-row>
         <hr />

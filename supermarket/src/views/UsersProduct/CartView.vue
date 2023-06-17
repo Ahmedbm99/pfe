@@ -4,13 +4,13 @@
       <b-container class="mt-3">
         <b-row>
           <b-col class="text-center">
-            <h2>Cart</h2>
+            <h2>Chariot</h2>
             <hr />
           </b-col>
         </b-row>
         <b-row v-if="cartItemCount == 0">
           <b-col>
-            empty cart!
+            Chariot Vide!
             <hr />
           </b-col>
         </b-row>
@@ -19,13 +19,13 @@
           <b-row>
             <b-col cols="3" />
             <b-col cols="3">
-              <strong>Item</strong>
+              <strong>Article</strong>
             </b-col>
             <b-col cols="2">
-              <strong>Price</strong>
+              <strong>Prix</strong>
             </b-col>
             <b-col cols="4">
-              <strong>Quantity</strong>
+              <strong>Quantité</strong>
             </b-col>
           </b-row>
           <hr />
@@ -56,8 +56,8 @@
               </b-row>
               <AddToWishlist
                 class="mt-2"
-                addButtonTitle="Save"
-                addedButtonTitle="Saved"
+                addButtonTitle="Enregistrer"
+                addedButtonTitle="Enregistré"
                 buttonType="sm"
                 :productId="product.productId"
               />
@@ -88,7 +88,7 @@
                   @click="removeCartItem(product)"
                   variant="danger"
                 >
-                  remove
+                  retirer
                 </b-button>
               </div>
             </b-col>
@@ -109,13 +109,13 @@
           </b-row>
           <b-row>
             <b-col cols="2">
-              <b-button block variant="info" to="/products">Add More</b-button>
+              <b-button block variant="info" to="/products">Ajouter Plus</b-button>
             </b-col>
             <b-col cols="8" />
             <b-col cols="2">
               <b-button to="/checkout" block variant="primary">
                 <b-icon icon="cursor-fill" />
-                Buy
+                Acheter
               </b-button>
             </b-col>
           </b-row>
@@ -182,8 +182,8 @@
           product.productId
         );
         if (itemIndex == -1) {
-          this.$bvToast.toast("Product removed from cart", {
-            title: "Cart",
+          this.$bvToast.toast("Produit retiré du chariot", {
+            title: "Chariot",
             variant: "success",
             toaster: "b-toaster-top-center",
             noCloseButton: false,

@@ -22,7 +22,7 @@
               Price: {{ product.amount }} {{ product.currency }}
             </small>
             <br />
-            <small class="mt-2">Quantity: {{ product.quantity }}</small>
+            <small class="mt-2">Quantité: {{ product.quantity }}</small>
             <br />
             <small class="mt-2">
               Cost: {{ product.amount * product.quantity }}
@@ -38,7 +38,7 @@
         <b-card class="mt-5" v-if="subTotalAmount != 0">
           <b-row>
             <b-col cols="8">
-              <h5>Sub-Total</h5>
+              <h5>Total Produits</h5>
             </b-col>
             <b-col cols="4">
               <b-card-text>
@@ -48,7 +48,7 @@
           </b-row>
           <b-row>
             <b-col cols="8">
-              <h5>Shipping Rate</h5>
+              <h5>Tarif d'expédition</h5>
             </b-col>
             <b-col cols="4">
               <b-card-text>
@@ -83,7 +83,7 @@
     </b-row>
     <b-row class="mt-4" v-if="subTotalAmount != 0">
       <b-col cols="5">
-        <b-button block variant="warning" to="/cart-view">Edit Cart</b-button>
+        <b-button block variant="warning" to="/cart-view">Modifier Panier</b-button>
      
       </b-col>
       <b-col cols="2" />
@@ -96,27 +96,27 @@
           
           >
           <b-icon icon="cursor-fill" />
-          Check Purchase
+          Vérifier la commande
         </b-button>
        
       
         <b-button v-if="payBtnSpin && quantityValidation"  @click="checkoutApplied"   block variant="success">
-          Checking...
+          Vérification...
           <b-icon-check small variant="light"></b-icon-check>
           
         </b-button>
         <b-button v-if="payBtnSpin && !quantityValidation"  @click="checkoutApplied"   block variant="success">
-          Quantity is not available
+          Quantité insuffisantes
           <b-icon-x small variant="light"></b-icon-x>
           
         </b-button>
-        <b-button block variant="success" to="/successful">Confirmed</b-button>
+        <b-button block variant="success" to="/successful">Confirme</b-button>
       </b-col>
 
     </b-row>
     <b-row v-if="subTotalAmount == 0">
       <b-col class="text-center">
-        <h4>No Product to Buy!!!</h4>
+        <h4>y a pas de produit pour passer!!!</h4>
       </b-col>
     </b-row>
   </div>
@@ -126,7 +126,7 @@
 
 import OrderService from "@/services/OrderService.js";
 import OrderItemService from "../../services/OrderItemService";
-
+import ProductsService from "../../services/ProductsService.js";
 
 
 export default {
@@ -204,7 +204,9 @@ export default {
        
        try {
         for (i = 0; i < this.checkoutProduct.length; i++) {
-          if(this.checkoutProduct[i].quantity == this.checkoutProduct[i].sales){
+
+          if(this.checkoutProduct[i].quantity > this.checkoutProduct[i].sales){
+          
             this.quantityValidation = false;
             this.$bvToast.toast("Quantity not available", {
             title: "Quantity not available",
@@ -213,10 +215,14 @@ export default {
             noCloseButton: false,
             solid: true,
           });
-          }
+          }else 
+          this.checkoutProduct[i].sales -= this.checkoutProduct[i].quantity; 
+          var product = (await ProductsService.QuantityProduct(this.checkoutProduct[i].sales , this.checkoutProduct[i].title))
+          console.log(product.quantity);
+        
         } 
         if (this.quantityValidation){
-        const order = (
+          const order = (
           await OrderService.createOrder({
             
             name: customerName,

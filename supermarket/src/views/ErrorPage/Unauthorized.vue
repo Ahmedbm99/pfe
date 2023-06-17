@@ -5,9 +5,9 @@
         <b-row align-h="center">
           <div class="text-center">
             <div style="font-size: 100px">401</div>
-            <h4>Unauthorized</h4>
-            <h6>Access to this resource is denied.</h6>
-            <a href="/"><b-icon icon="arrow-left" />Go back Home</a>
+            <h4>Non autorisé</h4>
+            <h6>L'accès à cette ressource est refusé.</h6>
+            <a href="/"><b-icon icon="arrow-left" />Retour à la page d'accueil</a>
           </div>
         </b-row>
       </b-container>

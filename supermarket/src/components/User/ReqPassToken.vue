@@ -16,7 +16,7 @@
               required
             />
           </b-form-group>
-          <small>We will send you a link to reset your password.</small><br />
+          <small>Nous vous enverrons un lien pour réinitialiser votre mot de passe.</small><br />
           <b-alert variant="primary" class="my-2 p-1 pl-2" :show="tokenAlert">
             {{ tokenAlertMessage }}
           </b-alert>
@@ -24,11 +24,11 @@
             Submit
           </b-button>
           <b-card class="mt-3" v-if="mailSent">
-            <div><strong>Request accepted</strong></div>
+            <div><strong>Requête acceptée</strong></div>
             <hr class="my-1" />
             <div>
-              Check your email for a link to reset your password. If it doesn’t
-              appear within a few minutes, check your spam folder.
+              Vérifiez votre e-mail pour un lien pour réinitialiser votre mot de passe. Si ce n'est pas le cas
+              apparaissent dans quelques minutes, vérifiez votre dossier spam.
             </div>
           </b-card>
         </b-form>

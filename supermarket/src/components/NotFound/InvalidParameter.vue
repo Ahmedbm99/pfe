@@ -5,16 +5,16 @@
           <b-col cols="6">
             <b-card class="mt-5" style="color: #001e5f">
               <h2>
-                <strong> Page not found. </strong>
+                <strong>Page non trouvée. </strong>
               </h2>
               <div class="mt-4">
-                We don't have any information about this {{ paramName }}.
+                Nous n'avons aucune information à ce sujet {{ paramName }}.
                 <br />
-                This {{ paramName }} might removed from the website.
+              {{ paramName }}  pourrait être retiré du site Web.
                 <br />
-                Or you might clicked on an invalid link.
+                Ou vous avez peut-être cliqué sur un lien invalide.
                 <br />
-                Go to
+                Aller à
                 <b-link :to="routerLink">
                   {{ pageToNavigate }}
                   <b-icon icon="arrow-right" />

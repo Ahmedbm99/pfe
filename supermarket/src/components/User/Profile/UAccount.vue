@@ -2,7 +2,7 @@
     <div>
       <b-row>
         <b-col>
-          <h5>Account</h5>
+          <h5>Profile</h5>
           <hr />
         </b-col>
       </b-row>
@@ -20,11 +20,11 @@
             v-b-modal.delete-account-confirmation
             variant="outline-danger"
           >
-            Close my account
+            Fermer mon compte
           </b-button>
           <br />
           <p class="mt-2">
-            Once you delete your account, you'll not be able to revert it.
+            Une fois votre compte supprimé, vous ne pourrez plus le rétablir.
           </p>
         </div>
       </div>
@@ -33,12 +33,12 @@
         hide-footer
         id="delete-account-confirmation"
       >
-        <template #modal-title> Are you sure you want to do this? </template>
-        <p>We'll also delete all of your activity from our server.</p>
+        <template #modal-title> Es-tu sûr de vouloir faire ça? </template>
+        <p>Nous supprimerons également toutes vos activités de notre serveur.</p>
   
         <label for="input-password">
-          To be sure please enter your
-          <strong>current password</strong>
+          Pour être sûr, veuillez entrer votre
+          <strong>Mot de passe actuel</strong>
         </label>
         <b-form-input
           type="password"
@@ -58,12 +58,12 @@
               block
               variant="warning"
             >
-              Cancel
+              Annuler
             </b-button>
           </b-col>
           <b-col cols="4">
             <b-button block @click="deleteAccount" variant="danger">
-              Delete Account
+              Supprimer Compte
             </b-button>
           </b-col>
         </b-row>

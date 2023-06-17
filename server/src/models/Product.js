@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       subtitle:         DataTypes.STRING,
       description:      DataTypes.TEXT,
       amount:           DataTypes.FLOAT,
-     
+      quantity:         DataTypes.INTEGER,
       
       rating:           DataTypes.FLOAT,
       peopleRated:      DataTypes.INTEGER,

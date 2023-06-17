@@ -4,8 +4,8 @@
       <b-container class="mt-5">
         <b-row align-v="center">
           <b-col>
-            <h3>Hello {{ user.firstName }} {{ user.lastName }},</h3>
-            <h5>Welcome to supplier dashboard</h5>
+            <h3>Bienvenue {{ user.firstName }} {{ user.lastName }},</h3>
+            <h5>Bienvenue sur le tableau de bord des fournisseurs</h5>
           </b-col>
         </b-row>
       </b-container>

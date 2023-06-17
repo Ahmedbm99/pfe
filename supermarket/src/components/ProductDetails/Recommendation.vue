@@ -3,7 +3,7 @@
       <b-row v-if="recommendation">
         <b-col>
           <div v-if="recommendation.length != 0">
-            <h3>Discover More Like This</h3>
+            <h3>Découvrez plus comme ça</h3>
             <hr />
           </div>
           <b-row>
@@ -17,7 +17,7 @@
                 <b-link @click="$router.push({ path: `/product/${product.id}` })">
                   <h5>{{ product.title }}</h5>
                 </b-link>
-                <h6>Price: {{ product.amount }} {{ product.currency }}</h6>
+                <h6>Prix: {{ product.amount }} {{ product.currency }}</h6>
                 <b-row class="mt-2" align-v="center">
                   <b-col>
                     <b-form-rating
@@ -36,8 +36,8 @@
                 <div class="d-flex justify-content-between">
                   <AddToCart
                     class="mt-2"
-                    addButtonTitle="Add To Cart"
-                    addedButtonTitle="In Cart"
+                    addButtonTitle="Ajouter au chariot"
+                    addedButtonTitle="dans chariot "
                     buttonType="sm"
                     :productId="product.id"
                     :rating="product.rating"
@@ -48,8 +48,8 @@
                   />
                   <AddToWishlist
                     class="mt-2"
-                    addButtonTitle="Save"
-                    addedButtonTitle="Saved"
+                    addButtonTitle="Enregistrer"
+                    addedButtonTitle="Enregistré"
                     buttonType="sm"
                     :productId="product.id"
                   />

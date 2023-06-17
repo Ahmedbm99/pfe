@@ -19,7 +19,7 @@
                 {{ orderItem.Product.currency }}
               </small>
               <br />
-              <small class="mt-2">Quantity: {{ orderItem.quantity }}</small>
+              <small class="mt-2">Quantité: {{ orderItem.quantity }}</small>
               <br />
               <small class="mt-2">
                 Cost: {{ orderItem.Product.amount * orderItem.quantity }}
@@ -31,7 +31,7 @@
       </b-row>
       <b-row>
         <b-col>
-          <h5 class="font-weight-bold">Update Status</h5>
+          <h5 class="font-weight-bold">État de mise à jour</h5>
           <hr />
           <b-row>
             <b-col cols="5">
@@ -53,17 +53,17 @@
           </b-row>
           <b-row class="mt-4">
             <b-col>
-              <h5 class="font-weight-bold">Delete Order</h5>
+              <h5 class="font-weight-bold">Supprimer la commande</h5>
               <hr />
               <b-row>
                 <b-col cols="5">
-                  <b-button block disabled variant="danger"> Delete </b-button>
+                  <b-button block disabled variant="danger">Supprimer </b-button>
                 </b-col>
               </b-row>
               <b-row class="mt-2" v-if="orderStatus == 'complete'">
                 <b-col>
                   <small>
-                    We don't allow anyone to delete any order information.
+                      Nous n'autorisons personne à supprimer des informations de commande.
                   </small>
                 </b-col>
               </b-row>

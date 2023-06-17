@@ -5,7 +5,7 @@
       <b-row>
         <b-col class="text-center">
           <h2>
-            Your Wishlist
+            Liste de souhaits
             <b-icon scale="1" icon="suit-heart-fill" />
           </h2>
           <hr />
@@ -13,7 +13,7 @@
       </b-row>
       <b-row v-if="myWishlist.length == 0">
         <b-col>
-          empty wishlist...
+          Liste de souhaits est vide .. 
           <hr />
         </b-col>
       </b-row>
@@ -64,8 +64,8 @@
                       <b-col>
                         <AddToCart
                           buttonType="sm"
-                          addButtonTitle="Add To Cart"
-                          addedButtonTitle="In Cart"
+                          addButtonTitle="Ajouter au chariot"
+                          addedButtonTitle="Dans chariot"
                           :productId="wishItem.Product.id"
                           :rating="wishItem.Product.rating"
                           :currency="wishItem.Product.currency"
@@ -75,8 +75,8 @@
                         />
                         <AddToWishlist
                           class="mt-2"
-                          addButtonTitle="Save"
-                          addedButtonTitle="Saved"
+                          addButtonTitle="Enregistrer"
+                          addedButtonTitle="Enregistré"
                           buttonType="sm"
                           :productId="wishItem.Product.id"
                         />
@@ -122,8 +122,8 @@ export default {
       this.wishlistItemCount = this.myWishlist.length;
     }
     if (this.userId == 0) {
-      this.$bvToast.toast("Please login for the wishlist", {
-        title: "Wishlist",
+      this.$bvToast.toast("Veuillez vous connecter pour la liste de souhaits", {
+        title: "liste de souhaits",
         variant: "primary",
         toaster: "b-toaster-top-center",
         noCloseButton: false,

@@ -33,8 +33,16 @@ export default {
   createProduct(credentials) {
     return Api().post("/api/products/createProduct", credentials);
   },
-  updateProduct(productId) {
-    Api().post(`/api/products/createHistoProduct/${productId}` )
+  createHistoProduct(productId){
+    return Api().post(`/api/products/createHistoProduct/${productId}` )
+  },
+  QuantityProduct(credentials) {
+    return Api().put("/api/products/quantity",credentials);
+  },
+  AupdateProduct(productId) {
+    return Api().put(`/api/products/Admin-update-product/${productId}`);
+  },
+  SupdateProduct(productId) {
     return Api().put(`/api/products/Supplier-update-product/${productId}`);
   },
   deleteProduct(productId) {

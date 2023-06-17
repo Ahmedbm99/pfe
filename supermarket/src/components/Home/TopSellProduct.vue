@@ -36,8 +36,8 @@
                   <AddToCart 
                     
                     class="mt-2"
-                    addButtonTitle="Add To Cart"
-                    addedButtonTitle="In Cart"
+                    addButtonTitle="Ajouter au chariot"
+                    addedButtonTitle="dans chariot"
                     buttonType="sm"
                     :key="cartComponentKey"
                     :productId="product.id"
@@ -50,8 +50,8 @@
                   <AddToWishlist
                     class="mt-2"
                     :key="wishlistKey"
-                    addButtonTitle="Save"
-                    addedButtonTitle="Saved"
+                    addButtonTitle="Enregistrer"
+                    addedButtonTitle="Enregistré"
                     buttonType="sm"
                     :productId="product.id"
                   />
@@ -80,7 +80,7 @@
         cartComponentKey: 0,
         wishlistKey: 2,
         topSellLimit: 20,
-        topSellViewTitle: "All Products",
+        topSellViewTitle: "Tous les produits",
       };
     },
     async mounted() {

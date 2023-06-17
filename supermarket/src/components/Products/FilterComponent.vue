@@ -1,7 +1,9 @@
 <template>
     <div>
       <b-row align-v="center">
-        <div class="ml-3 mb-1">Price Range</div>
+        <div class="ml-3 mb-1">
+          Échelle des prix
+        </div>
         <b-col cols="2">
           <b-form-input
             @keyup.enter="priceFilter"
@@ -9,7 +11,7 @@
             placeholder="Min"
           />
         </b-col>
-        To
+        à
         <b-col cols="2">
           <b-form-input
             @keyup.enter="priceFilter"

@@ -6,7 +6,7 @@
             class="py-3"
             toggleable="lg"
             type="dark"
-            style="background-color: #fb8500"
+            style="background-color: #0077b6"
           >
             <b-navbar-brand href="/">
               <b-img src="http://localhost:8084/public/company/EShopping/logo.png" al t="logo" width="70px" height="60px" />
@@ -17,15 +17,15 @@
                 <b-dropdown
                   id="dropdown-right"
                   :text="searchCategoryName"
-                  style="background-color: #fb8500"
-                  variant="transparent"
+                  style="background-color: #0077b6 "
+                  variant="light"
                   class="mr-auto"
                 >
                   <b-dropdown-item
                     variant="light"
-                    @click="set_category({ id: 0, name: 'All Category' })"
+                    @click="set_category({ id: 0, name: 'Toutes les catégories' })"
                   >
-                    All Category
+                 
                   </b-dropdown-item>
                   <b-dropdown-item
                     variant="dark"
@@ -41,7 +41,7 @@
                   <b-form-input
                     class="mr-sm-2 searchField"
                     v-model="searchTxt"
-                    placeholder="Search for products &amp; brands"
+                    placeholder="Chercher par catégories"
                     
                   />
                   <b-button type="submit"  @click="search" variant="white">
@@ -52,15 +52,15 @@
   
               <b-navbar-nav class="ml-auto">
                 <b-nav-item class="mr-auto" @click="wishlist" >
-                  <div  style =" color: #fff">
+                  <div  style ="color: #000814">
                     <b-icon scale="0.8" icon="suit-heart" />
-                    Wishlist
+                    Liste de souhaits
                   </div>
                 </b-nav-item>
                 <b-nav-item class="mr-auto" @click="cart">
-                  <div  style =" color: #fff">
+                  <div  style ="color: #000814">
                     <b-icon icon="cart2"   />
-                    Cart
+                    Chariot
                   </div>
                 </b-nav-item>
                 <b-nav-item class="mr-auto" v-if="userLoggedIn">
@@ -68,18 +68,18 @@
                 </b-nav-item>
                 <b-nav-item-dropdown class="mr-auto" right v-if="userLoggedIn">
                   <template #button-content>
-                    <em v-if="user.username" style="color: #fff">
+                    <em v-if="user.username" style="color: #000814">
                       {{ user.username }}
                     </em>
-                    <em v-if="!user.username" style="color: #fff">
+                    <em v-if="!user.username" style="color: #000814">
                       {{ user.firstName }} {{ user.lastName }}
                     </em>
                   </template>
                   <b-dropdown-item v-if="user.priority==1" to="/admin">
-                    Admin Panel
+                    Panneau d'Administration
                   </b-dropdown-item>
                   <b-dropdown-item v-if="user.priority==2" to="/supplier">
-                    Supplier Panel
+                    Panneau Fournisseur
                   </b-dropdown-item>
                   <b-dropdown-item to="/profile">Profile</b-dropdown-item>
                   <b-dropdown-item @click="logout()">Log Out</b-dropdown-item>
@@ -91,7 +91,7 @@
                   variant="success"
                   to="/login"
                 >
-                  Login &amp; Register
+                  S'inscrire &amp; Connexion
                 </b-button>
               </b-navbar-nav>
             </b-collapse>
@@ -114,7 +114,7 @@
         categoryList: [],
         searchTxt: "",
         searchCategoryId: 0,
-        searchCategoryName: "All Category",
+        searchCategoryName: "Toutes les catégories",
 
       };
     },

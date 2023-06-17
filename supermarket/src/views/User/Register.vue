@@ -5,13 +5,13 @@
         <b-row align-h="center">
           <b-col cols="7">
             <b-card style="color: #001e5f">
-              <h4 class="font-weight-bold">Create Account</h4>
+              <h4 class="font-weight-bold">Créer un compte</h4>
               <b-form @submit.stop.prevent="createAccount" class="mt-4">
                 <b-row>
                   <b-col>
                     <b-form-group
                       id="input-group-first-name"
-                      label="First Name"
+                      label="Prénom"
                       label-for="input-first-name"
                     >
                       <b-form-input
@@ -26,14 +26,14 @@
                         v-if="firstName"
                         :state="firstNameValidation"
                       >
-                        Your first name could be 15 character long.
+                      Votre prénom peut comporter 15 caractères.
                       </b-form-invalid-feedback>
                     </b-form-group>
                   </b-col>
                   <b-col>
                     <b-form-group
                       id="input-group-last-name"
-                      label="Last Name"
+                      label="Nom"
                       label-for="input-last-name"
                     >
                       <b-form-input
@@ -47,7 +47,7 @@
                         v-if="lastName"
                         :state="lastNameValidation"
                       >
-                        Your last name could be 15 character long.
+                      Votre nom de famille peut comporter 15 caractères.
                       </b-form-invalid-feedback>
                     </b-form-group>
                   </b-col>
@@ -57,7 +57,7 @@
                   <b-col>
                     <b-form-group
                       id="input-group-phone-number"
-                      label="Phone Number"
+                      label="Numéro de téléphone"
                       label-for="input-phone-number"
                     >
                       <b-form-input
@@ -72,7 +72,8 @@
                         :state="phoneNumberValidation"
                       >
                         
-                        Your phone number must include at least 8 numbers   .
+
+                      Votre numéro de téléphone doit comporter au moins 8 chiffres.
                       </b-form-invalid-feedback>
                     </b-form-group>
                   </b-col>
@@ -102,7 +103,7 @@
                   <b-col>
                     <b-form-group
                       id="input-group-password"
-                      label="Password"
+                      label="mot de passe"
                       label-for="input-password"
                     >
                       <b-form-input
@@ -116,15 +117,16 @@
                         v-if="password"
                         :state="newPasswordValidation"
                       >
-                        Your password could be 8-32 character long, contain
-                        letters, numbers and must not contain space.
+
+                      Votre mot de passe peut comporter entre 8 et 32 caractères, contenir
+                        lettres, chiffres et ne doit pas contenir d'espace.
                       </b-form-invalid-feedback>
                     </b-form-group>
                   </b-col>
                   <b-col>
                     <b-form-group
                       id="input-group-confirm-password"
-                      label="Confirm Password"
+                      label="Confirmez le mot de passe"
                       label-for="input-confirm-password"
                     >
                       <b-form-input
@@ -138,7 +140,8 @@
                         v-if="confirmPassword"
                         :state="confirmPasswordValidation"
                       >
-                        Password didn't match
+                        
+                      Le mot de passe ne correspond pas
                       </b-form-invalid-feedback>
                     </b-form-group>
                   </b-col>
@@ -148,7 +151,7 @@
                   <b-col cols="3" />
                   <b-col cols="6">
                     <b-button block type="submit" class="p-2" variant="warning">
-                      Create Account
+                      Créer un compte
                     </b-button>
                   </b-col>
                   <b-col cols="3" />
@@ -157,7 +160,8 @@
               <hr />
               <b-row>
                 <b-col class="text-center">
-                  <a>Already have an account?</a><a href="/login">&nbsp;Log in</a>
+                  <a>
+                    Vous avez déjà un compte?</a><a href="/login">&nbsp;Connexion</a>
                 </b-col>
               </b-row>
             </b-card>

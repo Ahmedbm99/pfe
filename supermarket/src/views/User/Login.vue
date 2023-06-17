@@ -5,7 +5,7 @@
         <b-row align-h="center">
           <b-col cols="10" md="7" lg="5">
             <b-card style="color: #001e5f">
-              <h4 class="font-weight-bold">Login</h4>
+              <h4 class="font-weight-bold">Connexion</h4>
               <b-form @submit.stop.prevent="login" class="mt-4">
                 <b-form-group
                   id="input-group-email"
@@ -27,7 +27,7 @@
   
                 <b-form-group
                   id="input-group-password"
-                  label="Password"
+                  label="Mot de passe"
                   label-for="input-password"
                 >
                   <b-form-input
@@ -53,7 +53,7 @@
                       type="submit"
                       variant="warning"
                     >
-                      Login
+                      Connexion
                     </b-button>
                   </b-col>
                   <b-col cols="3" />
@@ -63,7 +63,7 @@
                 <b-col class="text-center">
                   <small>
                     <b-link v-b-toggle.request-password-token>
-                      forget your password?
+                      Mot de passe oublié?
                     </b-link>
                   </small>
                 </b-col>
@@ -74,8 +74,8 @@
               <hr />
               <b-row>
                 <b-col class="text-center">
-                  New Customer?&nbsp;
-                  <b-link to="/register">Create your account</b-link>
+                  Nouveau client?&nbsp;
+                  <b-link to="/register">Créez votre compte</b-link>
                 </b-col>
               </b-row>
             </b-card>

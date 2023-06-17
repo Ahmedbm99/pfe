@@ -89,7 +89,7 @@
                   {{ displayProduct.title }}
                 </h3>
                 <h5>
-                  <b>Price : </b>{{ displayProduct.amount }}
+                  <b>Prix : </b>{{ displayProduct.amount }}
                   {{ displayProduct.currency }}
                 </h5>
   
@@ -117,8 +117,8 @@
                   <AddToCart
                     buttonType="sm"
                     :key="cartComponentKey"
-                    addButtonTitle="Add To Cart"
-                    addedButtonTitle="In Cart"
+                    addButtonTitle="Ajouter au chariot"
+                    addedButtonTitle="Dans chariot"
                     :productId="displayProduct.id"
                     :rating="displayProduct.rating"
                     :currency="displayProduct.currency"
@@ -129,8 +129,8 @@
                   <AddToWishlist
                     class="ml-3"
                     :key="wishlistKey"
-                    addButtonTitle="Save"
-                    addedButtonTitle="Saved"
+                    addButtonTitle="Enregistrer"
+                    addedButtonTitle="Enregistré"
                     buttonType="sm"
                     :productId="displayProduct.id"
                   />
@@ -145,10 +145,10 @@
                       block
                     >
                       <b-icon-cart-fill />
-                      Buy Now
+                      Passer maintenant
                     </b-button>
                     <b-button @click="Update">
-                    Update
+                    Mettre à jour
                   </b-button>
                   
                   </b-col>
@@ -158,7 +158,7 @@
           </b-row>
           <div class="mt-5 p-4" style="background-color: #eeeeee">
             <div>
-              <h3>Feature</h3>
+              <h3>Descrption</h3>
               <div v-html="displayProduct.description" ></div>
             </div>
           </div>

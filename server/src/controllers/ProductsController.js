@@ -236,7 +236,35 @@ module.exports = {
       });
     }
   },
-  async updateProduct(req, res) {
+  async QuantityProduct(req ,res){
+    const { title, quantity } = req.body; 
+    try{
+      await Product.update({quantity},{
+        where: { title },
+      });
+      res.send(req.body)
+    } catch (err){
+      res.status(500).send({
+        error: "An error occured when trying to update quantity of product"
+      })
+    }
+  },
+  async SupdateProduct(req, res) {
+    try {
+      await Product.update(req.body, {
+        where: {
+          id: req.body.id,
+        },
+      
+      });
+      res.send(req.body);
+    } catch (err) {
+      res.status(500).send({
+        error: "An error occured when trying to update a product.",
+      });
+    }
+  },
+  async AupdateProduct(req, res) {
     try {
       await Product.update(req.body, {
         where: {

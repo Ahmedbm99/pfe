@@ -4,7 +4,7 @@
       <b-container class="mt-4">
         <b-row>
           <b-col class="text-center">
-            <h3>Before You Pay Us</h3>
+            <h3>Avant de nous payer</h3>
           </b-col>
         </b-row>
         <hr />

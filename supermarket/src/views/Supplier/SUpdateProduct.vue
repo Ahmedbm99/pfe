@@ -5,7 +5,7 @@
       <b-container class="mt-4">
         <b-card>
           <b-navbar text-variant="white" variant="info">
-            <b-navbar-brand style="color: #fff">Edit Product</b-navbar-brand>
+            <b-navbar-brand style="color: #fff">Modifier le produit</b-navbar-brand>
           </b-navbar>
           <b-form
             @reset="resetProduct"
@@ -16,13 +16,13 @@
               <b-col>
                 <b-form-group
                   id="input-group-title"
-                  label="Product Title"
+                  label=" Titre du produit"
                   label-for="input-title"
                 >
                   <b-form-input
                     id="input-title"
                     v-model="product.title"
-                    placeholder="Enter Product Name"
+                    placeholder="Entrez le nom du produit"
                     required
                   />
                 </b-form-group>
@@ -30,13 +30,13 @@
                   <b-col>
                     <b-form-group
                       id="input-group-amount"
-                      label="Price"
+                      label="Prix"
                       label-for="input-amount"
                     >
                       <b-form-input
                         id="input-amount"
                         v-model="product.amount"
-                        placeholder="Price"
+                        placeholder="Prix"
                         required
                       />
                     </b-form-group>
@@ -44,7 +44,7 @@
                   <b-col>
                     <b-form-group
                       id="input-group-currency"
-                      label="currency"
+                      label="Devise"
                       label-for="input-currency"
                     >
                       <b-form-input
@@ -59,7 +59,7 @@
                 <div>
                   <b-form-group
                     id="input-group-overview"
-                    label="Overview"
+                    label="Aperçu"
                     label-for="input-overview"
                   >
                     <vue-editor
@@ -75,7 +75,7 @@
                 </div>
               </b-col>
               <b-col>
-                <b-form-group label="Product Category">
+                <b-form-group label="catégorie de produit">
                   <b-row>
                     <b-col>
                       <b-dropdown
@@ -98,12 +98,12 @@
                               <b-form-input
                                 required
                                 v-model="newCategoryName"
-                                placeholder="Category Name"
+                                placeholder="Nom de catégorie"
                               />
                             </b-col>
                             <b-col>
                               <b-button type="submit" block variant="warning">
-                                Create
+                                Créer
                               </b-button>
                             </b-col>
                           </b-row>
@@ -143,7 +143,7 @@
                             </b-col>
                             <b-col>
                               <b-button type="submit" block variant="warning">
-                                Create
+                                Créer
                               </b-button>
                             </b-col>
                           </b-row>
@@ -187,7 +187,7 @@
                             </b-col>
                             <b-col>
                               <b-button type="submit" block variant="warning">
-                                Create
+                                Créer
                               </b-button>
                             </b-col>
                           </b-row>
@@ -215,7 +215,7 @@
               </vue-editor>
             </b-form-group>
   
-            <b-button type="submit" variant="primary">Update Product</b-button>
+            <b-button type="submit" @click="update()" variant="primary">Mettre à jour le produit</b-button>
           </b-form>
         </b-card>
       </b-container>
@@ -272,6 +272,18 @@
       this.fetchProduct();
     },
     methods: {
+      update(){
+      this.$bvToast.toast("Produit a été modifier", {
+        title: "Mettre à jour",
+        variant: "success",
+        toaster: "b-toaster-top-center",
+        noCloseButton: false,
+        solid: true,
+      });
+    },
+
+
+
       fetchCategoryList() {
         CategoryService.getCategoryList()
           .then((response) => {
@@ -347,10 +359,10 @@
           return;
         }
         ProductsService.createHistoProduct(this.product)
-        ProductsService.updateProduct(this.product)
+        ProductsService.SupdateProduct(this.product)
           .then(() => {
             // Handle success
-            this.$router.push({ name: "AdminProducts" });
+            this.$router.push({ path: "products"});
           })
           .catch((error) => {
             // Handle error

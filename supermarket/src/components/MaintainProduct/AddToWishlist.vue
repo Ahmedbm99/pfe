@@ -8,19 +8,19 @@
         class="mt-0"
       >
         <b-tooltip target="wishlist-dd" triggers="hover">
-          Saved To Wishlist
+          Enregistré dans la liste de souhaits
         </b-tooltip>
         <template #button-content>
           <b-icon shift-v="-1" icon="suit-heart-fill" />
           {{ addedButtonTitle }}
         </template>
         <b-dropdown-item @click="removeWishlistItem">
-          Remove from wishlist
+          Supprimer de la liste de souhaits
         </b-dropdown-item>
       </b-dropdown>
       <b-button
         v-b-tooltip.hover
-        title="Save To Wishlist"
+        title="Ajouter à la liste de souhaits"
         v-if="validWishlistItem == -1"
         :size="buttonType"
         variant="outline-success"
@@ -67,8 +67,8 @@
     methods: {
       async addWishlistItem() {
         if (this.userId == 0) {
-          this.$bvToast.toast("Please login to save on wishlist", {
-            title: "Wishlist",
+          this.$bvToast.toast("Veuillez vous connecter pour enregistrer sur la liste de souhaits", {
+            title: "Liste de souhaits",
             variant: "danger",
             toaster: "b-toaster-top-center",
             noCloseButton: false,
@@ -81,8 +81,8 @@
           this.productId
         );
         if (this.validWishlistItem != -1) {
-          this.$bvToast.toast("Product saved to wishlist", {
-            title: "Wishlist",
+          this.$bvToast.toast("Produit enregistré dans la liste de souhaits", {
+            title: "Liste de souhaits",
             variant: "info",
             toaster: "b-toaster-top-center",
             noCloseButton: false,
@@ -96,8 +96,8 @@
           this.productId
         );
         if (this.validWishlistItem == -1) {
-          this.$bvToast.toast("Product removed from wishlist", {
-            title: "Wishlist",
+          this.$bvToast.toast("Produit retiré de la liste de souhaits", {
+            title: "Liste de souhaits",
             variant: "info",
             toaster: "b-toaster-top-center",
             noCloseButton: false,

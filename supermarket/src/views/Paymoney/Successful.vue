@@ -14,9 +14,9 @@
               <b-button size="lg" disabled variant="primary">
                 <b-icon icon="check" scale="3" />
               </b-button>
-              <h1 class="mt-4">You're all set!</h1>
-              <h6>Thanks for your purchase!</h6>
-              <h6>We'll deliver your order in minutes.</h6>
+              <h1 class="mt-4">Vous êtes prêt !</h1>
+              <h6>Merci pour votre achat!</h6>
+              <h6>Nous livrerons votre commande en quelques minutes.</h6>
               <b-card-footer class="mt-4"> EShopping </b-card-footer>
             </b-card>
           </b-col>

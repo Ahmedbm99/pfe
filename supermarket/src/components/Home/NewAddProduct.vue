@@ -81,7 +81,7 @@
         cartComponentKey: 0,
         wishlistKey: 2,
         newAddLimit: 4,
-        newAddViewTitle: "New Collection 2023",
+        newAddViewTitle: "Ajouté récemment",
       };
     },
     async mounted() {

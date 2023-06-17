@@ -33,7 +33,7 @@
                       <b-icon
                         variant="primary"
                         v-b-tooltip.hover
-                        title="Edit"
+                        title="Modifier"
                         icon="pen"
                       />
                     </b-button>
@@ -45,7 +45,7 @@
                       <b-icon
                         variant="danger"
                         v-b-tooltip.hover
-                        title="Delete"
+                        title="Supprimer"
                         icon="trash"
                       />
                     </b-button>
@@ -64,7 +64,7 @@
                       size="sm"
                       required
                       v-model="subSubCategory.name"
-                      placeholder="Category Name"
+                      placeholder="Nom de catégorie"
                     />
                   </b-form-group>
                 </b-col>
@@ -75,7 +75,7 @@
                         <b-icon
                           variant="primary"
                           v-b-tooltip.hover
-                          title="Save"
+                          title="Enregistrer"
                           icon="check2"
                         />
                       </b-button>
@@ -83,7 +83,7 @@
                         <b-icon
                           variant="danger"
                           v-b-tooltip.hover
-                          title="Cancel"
+                          title="Annuler"
                           icon="x"
                         />
                       </b-button>
@@ -102,11 +102,11 @@
                   size="sm"
                   required
                   v-model="newSubSubCategory"
-                  placeholder="Category Name"
+                  placeholder="Nom de catégorie"
                 />
               </b-form-group>
               <b-button size="sm" type="submit" variant="warning">
-                Create
+                Créer
               </b-button>
             </b-form>
           </b-card>

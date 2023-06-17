@@ -8,22 +8,22 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="mr-auto">
             <b-nav-item to="/admin" class="ml-2">
-              <div style="color: #fff; font-size: 18px">Dashboard</div>
+              <div style="color: #fff; font-size: 18px">Tableau de bord</div>
             </b-nav-item>
             <b-nav-item to="/admin/users" class="ml-2">
-              <div style="color: #fff; font-size: 18px">Users</div>
+              <div style="color: #fff; font-size: 18px">Utilisateurs</div>
             </b-nav-item>
             <b-nav-item to="/admin/addSupplier" class="ml-2">
-              <div style="color: #fff; font-size: 18px">Add Supplier</div>
+              <div style="color: #fff; font-size: 18px">Ajouter un Fournisseur</div>
             </b-nav-item>
             <b-nav-item to="/admin/addCompany" class="ml-2">
-              <div style="color: #fff; font-size: 18px">Add Company</div>
+              <div style="color: #fff; font-size: 18px">Ajouter une Entreprise</div>
             </b-nav-item>
             <b-nav-item to="/admin/newContract" class="ml-2">
-              <div style="color: #fff; font-size: 18px">New Contract</div>
+              <div style="color: #fff; font-size: 18px">Nouveau Contrat</div>
             </b-nav-item>
             <b-nav-item to="/admin/orders" class="ml-2">
-              <div style="color: #fff; font-size: 18px">Orders</div>
+              <div style="color: #fff; font-size: 18px">Commandes</div>
             </b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
@@ -39,8 +39,8 @@
                   {{ user.firstName }} {{ user.lastName }}
                 </em>
               </template>
-              <b-dropdown-item to="/admin/profile">Admin Profile</b-dropdown-item>
-              <b-dropdown-item @click="logout()">Log Out</b-dropdown-item>
+              <b-dropdown-item to="/admin/profile">Profil d'Administrateur</b-dropdown-item>
+              <b-dropdown-item @click="logout()">se déconnecter</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>

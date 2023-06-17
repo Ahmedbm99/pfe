@@ -2,14 +2,14 @@
     <div>
       <b-row>
         <b-col>
-          <h5>Public profile</h5>
+          <h5> profile Public</h5>
         </b-col>
       </b-row>
       <hr class="my-2" />
       <b-row class="mt-3">
         <b-col cols="7">
           <div>
-            <strong>Name</strong>
+            <strong>Nom</strong>
             <b-badge
               pill
               class="ml-2"
@@ -17,7 +17,7 @@
               variant="success"
             >
               <b-icon icon="check-circle-fill" />
-              Admin
+              Administrateur
             </b-badge>
           </div>
           <div class="mt-1" v-if="editName == 0">
@@ -55,7 +55,7 @@
               <b-row class="mt-2">
                 <b-col>
                   <b-button size="sm" type="submit" variant="warning">
-                    Save
+                    Enregistrer
                   </b-button>
                   <b-button
                     class="ml-2"
@@ -63,7 +63,7 @@
                     size="sm"
                     variant="outline-danger"
                   >
-                    Cancel
+                    Annuler
                   </b-button>
                 </b-col>
               </b-row>
@@ -72,7 +72,7 @@
   
           <div>
             <div class="mt-3">
-              <strong>Username</strong>
+              <strong>Surnom</strong>
               <b-button
                 v-if="!user.username"
                 @click="changeUserName"
@@ -118,7 +118,7 @@
                       required
                     />
                     <b-form-valid-feedback :state="userNameValidation">
-                      This username is available.
+                      Ce nom d'utilisateur est disponible.
                     </b-form-valid-feedback>
                     <b-form-invalid-feedback :state="userNameValidation">
                       {{ userNameMessage }}
@@ -136,7 +136,7 @@
                       size="sm"
                       variant="outline-danger"
                     >
-                      Cancel
+                      Annuler
                     </b-button>
                   </b-col>
                 </b-row>
@@ -150,7 +150,7 @@
             {{ user.email }}
           </div>
           <div class="mt-3">
-            <strong>Password</strong>
+            <strong>Mot de passe</strong>
           </div>
           <div class="mt-1">
             ********
@@ -162,7 +162,7 @@
             >
               <b-icon
                 v-b-tooltip.hover
-                title="change password"
+                title="Change mot de passe"
                 scale="0.8"
                 icon="pen"
               />
@@ -170,7 +170,7 @@
           </div>
           <b-modal
             @shown="$refs.currentPasswordField.focus()"
-            title="Change password"
+            title="Change mot de passe"
             id="modalUpdatePassword"
             hide-footer
           >
@@ -180,7 +180,7 @@
             >
               <b-form-group
                 id="input-group-current-password"
-                label="Current Password"
+                label="Mot de passe actual"
                 label-for="input-current-password"
               >
                 <b-form-input
@@ -201,12 +201,13 @@
                   v-if="!currentPassword"
                   :state="validCurrentPassword && currentPasswordValidation"
                 >
-                  Current password field can't be empty!
+                  Le champ du mot de passe actuel ne peut pas être vide !
+
                 </b-form-invalid-feedback>
               </b-form-group>
               <b-form-group
                 id="input-group-new-password"
-                label="New Password"
+                label="Nouveau mot de passe"
                 label-for="input-new-password"
               >
                 <b-form-input
@@ -221,19 +222,19 @@
                   v-if="newPassword"
                   :state="newPasswordValidation"
                 >
-                  New password must have 8-32 character long, contain letters,
-                  numbers and must not contain space.
+                Le nouveau mot de passe doit comporter entre 8 et 32 caractères, contenir des lettres,
+                  chiffres et ne doit pas contenir d'espace.
                 </b-form-invalid-feedback>
                 <b-form-invalid-feedback
                   v-if="!newPassword"
                   :state="newPasswordValidation"
                 >
-                  Password field can't be empty!
+                Le champ du mot de passe ne peut pas être vide !
                 </b-form-invalid-feedback>
               </b-form-group>
               <b-form-group
                 id="input-group-confirm-password"
-                label="Confirm Password"
+                label="Confirme mot de passe"
                 label-for="input-confirm-password"
               >
                 <b-form-input
@@ -253,7 +254,7 @@
                   v-if="!confirmPassword"
                   :state="confirmPasswordValidation"
                 >
-                  Password field can't be empty!
+                  Le mot de passe ne correspond pas
                 </b-form-invalid-feedback>
               </b-form-group>
               <b-row class="mt-4">

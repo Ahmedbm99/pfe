@@ -17,7 +17,7 @@
                 </b-link>
               </div>
               <h6 class="mt-1">
-                Price: {{ product.amount }} {{ product.currency }}
+                Prix: {{ product.amount }} {{ product.currency }}
               </h6>
               <b-row class="mt-2" align-v="center">
                 <b-col cols="12">
@@ -37,8 +37,8 @@
               <div class="d-flex justify-content-between">
                 <AddToCart
                   class="mt-2"
-                  addButtonTitle="Add To Cart"
-                  addedButtonTitle="In Cart"
+                  addButtonTitle="Ajouter au chariot"
+                  addedButtonTitle="dans chariot"
                   :key="cartComponentKey"
                   buttonType="sm"
                   :productId="product.id"
@@ -50,8 +50,8 @@
                 />
                 <AddToWishlist
                   class="mt-2"
-                  addButtonTitle="Save"
-                  addedButtonTitle="Saved"
+                  addButtonTitle="Enregistrer"
+                  addedButtonTitle="Enregistré"
                   :key="wishlistKey"
                   buttonType="sm"
                   :productId="product.id"
@@ -65,7 +65,7 @@
                 variant="danger"
               >
                 <b-icon icon="trash" />
-                Delete
+                Supprimer
               </b-button>
               <b-button
                 v-if="supplier"
@@ -75,7 +75,7 @@
                 variant="danger"
               >
                 <b-icon icon="trash" />
-                Delete
+                Supprimer
               </b-button>
             </b-card>
           </b-card-group>
@@ -99,11 +99,11 @@
         <b-col />
         <b-col>
           <h6>
-            SHOWING {{ (currentPage - 1) * perPage + 1 }} TO
+          MONTRANT {{ (currentPage - 1) * perPage + 1 }} à
             {{
               currentPage * perPage > apCount ? apCount : currentPage * perPage
             }}
-            OF {{ apCount }} ({{ Math.ceil(apCount / perPage) }}
+            de {{ apCount }} ({{ Math.ceil(apCount / perPage) }}
             PAGES)
           </h6>
         </b-col>

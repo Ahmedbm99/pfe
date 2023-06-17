@@ -59,7 +59,7 @@
                 >
                 
                   <b-icon  class="mr-1" variant="primary" icon="plus-square" />
-                  Add Product
+                  Ajouter Produit
                 </b-button>
               </b-navbar-nav>
          

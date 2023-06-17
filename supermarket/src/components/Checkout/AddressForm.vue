@@ -3,11 +3,11 @@
       <b-row>
         <b-col>
           <b-form>
-            <h5 class="font-weight-bold">Personal Details</h5>
+            <h5 class="font-weight-bold">Détails personnels </h5>
             <hr />
             <b-form-group
               id="input-group-name"
-              label="Name"
+              label="Prénom"
               label-for="input-name"
             >
               <b-form-input
@@ -35,7 +35,7 @@
             </b-form-group>
             <b-form-group
               id="input-group-phone"
-              label="Phone no."
+              label="Numéro de telephone"
               label-for="input-phone"
             >
               <b-form-input
@@ -51,13 +51,13 @@
               <b-card bg-variant="light">
                 <b-form-group
                   label-cols-lg="3"
-                  label="Shipping Address"
+                  label="Adresse de livraison"
                   label-size="lg"
                   label-class="font-weight-bold pt-0"
                   class="mb-0"
                 >
                   <b-form-group
-                    label="Line:"
+                    label="Ligne:"
                     label-for="nested-line1"
                     label-cols-sm="3"
                     label-align-sm="right"
@@ -73,7 +73,7 @@
                   
   
                   <b-form-group
-                    label="Postal Code:"
+                    label="Code Postal:"
                     label-for="nested-postalcode"
                     label-cols-sm="3"
                     label-align-sm="right"
@@ -88,7 +88,7 @@
                   </b-form-group>
   
                   <b-form-group
-                    label="City:"
+                    label="Ville:"
                     label-for="nested-city"
                     label-cols-sm="3"
                     label-align-sm="right"
@@ -105,7 +105,7 @@
   
                   <b-form-group
                     class="mb-0"
-                    label="Country:"
+                    label="Pays:"
                     label-for="nested-country"
                     label-cols-sm="3"
                     label-align-sm="right"

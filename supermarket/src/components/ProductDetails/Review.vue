@@ -31,7 +31,7 @@
         <b-col cols="4" class="justify-content-center">
           <b-row align-v="center" class="my-2">
             <b-col cols="2">
-              <small>5 star</small>
+              <small>5 étoiles</small>
             </b-col>
             <b-col cols="7">
               <b-progress variant="primary">
@@ -50,7 +50,7 @@
   
           <b-row align-v="center" class="my-2">
             <b-col cols="2">
-              <small>4 star</small>
+              <small>4 étoiles</small>
             </b-col>
             <b-col cols="7">
               <b-progress variant="primary">
@@ -70,7 +70,7 @@
   
           <b-row align-v="center" class="my-2">
             <b-col cols="2">
-              <small>3 star</small>
+              <small>3 étoiles</small>
             </b-col>
             <b-col cols="7">
               <b-progress variant="primary">
@@ -89,7 +89,7 @@
   
           <b-row align-v="center" class="my-2">
             <b-col cols="2">
-              <small>2 star</small>
+              <small>2 étoiles</small>
             </b-col>
             <b-col cols="7">
               <b-progress variant="primary">
@@ -106,7 +106,7 @@
   
           <b-row align-v="center" class="my-2">
             <b-col cols="2">
-              <small>1 star</small>
+              <small>1 étoiles</small>
             </b-col>
             <b-col cols="7">
               <b-progress variant="primary">
@@ -127,7 +127,7 @@
       <hr />
       <b-row>
         <b-col cols="6">
-          <h4>Customer Review</h4>
+          <h4>Avis Clients</h4>
           <hr />
           <div v-for="review in reviewList2" :key="review.id" class="mb-2">
             <b-card
@@ -170,7 +170,7 @@
                           v-if="userId == review.UserId"
                           @click="editReview(review)"
                         >
-                          edit
+                          Modifier
                         </b-link>
                       </small>
                       <small>
@@ -178,7 +178,7 @@
                           v-if="userId == review.UserId || admin"
                           @click="deleteReview(review)"
                         >
-                          delete
+                          Supprimer
                         </b-link>
                       </small>
                     </b-col>
@@ -198,7 +198,7 @@
         </b-col>
         <b-col cols="6">
           <b-card bg-variant="white" text-variant="dark" v-if="userReviewFlag">
-            <b-card-title> Your Review </b-card-title>
+            <b-card-title> Votre avis </b-card-title>
             <b-row>
               <b-col cols="4">
                 <b-img
@@ -235,12 +235,12 @@
                   <b-col>
                     <small class="mr-2">
                       <b-link @click="editReview(currentUserReview)">
-                        edit
+                        Modifier
                       </b-link>
                     </small>
                     <small>
                       <b-link @click="deleteReview(currentUserReview)">
-                        delete
+                        Supprimer
                       </b-link>
                     </small>
                   </b-col>
@@ -258,11 +258,11 @@
             <b-form v-if="userLoggedIn" @submit.stop.prevent="createReview">
               <b-row>
                 <b-col cols="5">
-                  <h6>Rating</h6>
+                  <h6>Notation</h6>
                   <b-form-rating v-model="rating" variant="primary" />
                 </b-col>
               </b-row>
-              <div class="mt-4">Comment</div>
+              <div class="mt-4">Commentaire</div>
               <b-form-group>
                 <b-form-textarea
                   required
@@ -275,11 +275,11 @@
               <b-button variant="primary" type="submit"> Submit </b-button>
             </b-form>
             <div v-if="!userLoggedIn">
-              You'll not be able to write a review until you're logged in.
+              Vous ne pourrez pas rédiger d'avis tant que vous ne serez pas connecté.
               <b-row>
                 <b-col>
                   <b-button to="/login" class="mt-3" variant="outline-dark">
-                    Login
+                    Connexion
                   </b-button>
                 </b-col>
               </b-row>
@@ -296,11 +296,11 @@
         <b-form @submit.stop.prevent="updateReview">
           <b-row>
             <b-col cols="5">
-              <h6>Rating</h6>
+              <h6>Notation</h6>
               <b-form-rating v-model="editRating" variant="primary" />
             </b-col>
           </b-row>
-          <div class="mt-4">Comment</div>
+          <div class="mt-4">Commentaire</div>
           <b-form-group>
             <b-form-textarea
               v-model="editComment"

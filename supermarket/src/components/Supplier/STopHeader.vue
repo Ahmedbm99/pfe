@@ -8,7 +8,7 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="mr-auto">
             <b-nav-item to="/supplier" class="ml-2">
-              <div style="color: #fff; font-size: 18px">Dashboard</div>
+              <div style="color: #fff; font-size: 18px">Tableau de bord</div>
             </b-nav-item>
             
           </b-navbar-nav>
@@ -25,8 +25,8 @@
                   {{ user.firstName }} {{ user.lastName }}
                 </em>
               </template>
-              <b-dropdown-item to="/Supplier/profile">Supplier Profile</b-dropdown-item>
-              <b-dropdown-item @click="logout()">Log Out</b-dropdown-item>
+              <b-dropdown-item to="/Supplier/profile">Profil du fournisseur</b-dropdown-item>
+              <b-dropdown-item @click="logout()">Déconnexion</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>

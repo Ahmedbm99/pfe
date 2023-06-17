@@ -11,7 +11,7 @@
           {{ addedButtonTitle }}
         </template>
         <b-dropdown-item @click="removeCartItem">
-          Remove from Cart
+          Supprimer du chariot
         </b-dropdown-item>
       </b-dropdown>
       <b-button
@@ -77,8 +77,8 @@
         );
   
         if (this.validCartItem != -1) {
-          this.$bvToast.toast("Product added to cart", {
-            title: "Cart",
+          this.$bvToast.toast("Produit ajouté au chariot", {
+            title: "Chariot",
             variant: "primary",
             toaster: "b-toaster-top-center",
             noCloseButton: false,
@@ -92,8 +92,8 @@
           this.productId
         );
         if (this.validCartItem == -1) {
-          this.$bvToast.toast("Product removed from cart", {
-            title: "Cart",
+          this.$bvToast.toast("Produit retiré du chariot", {
+            title: "Chariot",
             variant: "primary",
             toaster: "b-toaster-top-center",
             noCloseButton: false,

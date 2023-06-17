@@ -5,11 +5,11 @@
         <b-row>
           <b-col cols="6">
             <b-card v-if="userId == 0">
-              <h5 class="text-center"><strong>Email Verification</strong></h5>
+              <h5 class="text-center"><strong>vérification de l'E-mail</strong></h5>
               <b-alert class="mt-4" variant="warning" show>
                 <small>
-                  Please try to
-                  <b-link to="/register">Create your account</b-link>
+                  Veuillez essayer de
+                  <b-link to="/register">Créez votre compte</b-link>
                   first.
                 </small>
               </b-alert>
@@ -19,7 +19,7 @@
               style="color: #001e5f"
               v-if="userId != 0"
               border-variant="info"
-              header="Verify email"
+              header="email vérification"
               header-bg-variant="info"
               header-text-variant="white"
               header-class="text-center"
@@ -27,8 +27,8 @@
               <b-form @submit.stop.prevent="verifyRegsToken">
                 <b-form-group>
                   <label for="input-verification-code">
-                    Enter the code we send to <strong>{{ userEmail }}.</strong> If
-                    it doesn’t appear within a few minutes, check your spam folder
+                      Entrez le code que nous envoyons à <strong>{{ userEmail }}.</strong> If
+                    il n'apparaît pas au bout de quelques minutes, vérifiez votre dossier spam
                   </label>
                   <b-form-input
                     id="input-verification-code"
@@ -42,8 +42,8 @@
                 </b-form-group>
                 <b-button type="submit" variant="success"> Submit </b-button>
                 <div class="mt-4">
-                  you can resend the verification code if you have not received
-                  the email.
+                  vous pouvez renvoyer le code de vérification si vous n'avez pas reçu
+                  le courriel.
                   <br />
                   <b-button
                     class="mt-2"
@@ -51,7 +51,7 @@
                     variant="info"
                     @click="tryAgain"
                   >
-                    Resend Email
+                    Ré-envoyer l'email
                   </b-button>
                 </div>
               </b-form>

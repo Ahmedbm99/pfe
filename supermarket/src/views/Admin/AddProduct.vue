@@ -5,7 +5,7 @@
       <b-container class="mt-4">
         <b-card>
           <b-navbar text-variant="white" variant="info">
-            <b-navbar-brand style="color: #fff">Add Product</b-navbar-brand>
+            <b-navbar-brand style="color: #fff">Ajouter un produit</b-navbar-brand>
           </b-navbar>
           <b-form
             @reset="resetProduct"
@@ -109,12 +109,12 @@
                               <b-form-input
                                 required
                                 v-model="newCategoryName"
-                                placeholder="Category Name"
+                                placeholder="Nom de catégorie"
                               />
                             </b-col>
                             <b-col>
                               <b-button type="submit" block variant="warning">
-                                Create
+                                Créer
                               </b-button>
                             </b-col>
                           </b-row>
@@ -149,12 +149,12 @@
                               <b-form-input
                                 required
                                 v-model="newSubCategoryName"
-                                placeholder="Category Name"
+                                placeholder="Nom de catégorie"
                               />
                             </b-col>
                             <b-col>
                               <b-button type="submit" block variant="warning">
-                                Create
+                                Créer
                               </b-button>
                             </b-col>
                           </b-row>
@@ -194,12 +194,12 @@
                               <b-form-input
                                 required
                                 v-model="newSubSubCategoryName"
-                                placeholder="Category Name"
+                                placeholder="Nom de catégorie "
                               />
                             </b-col>
                             <b-col>
                               <b-button type="submit" block variant="warning">
-                                Create
+                                Créer
                               </b-button>
                             </b-col>
                           </b-row>
@@ -210,12 +210,12 @@
                 </b-form-group>
                 <b-form-group
                   id="input-group-images"
-                  label="Product Images"
+                  label="Photo de produit"
                   label-for="input-images"
                 >
                   <b-form-file
                     id="input-images"
-                    placeholder="Upto 10 image"
+                    placeholder="jusqu'à 10 photos"
                     required
                     multiple
                     @change="selectedImage"
@@ -224,7 +224,7 @@
                 <b-alert variant="warning" class="mt-2" :show="imageAlert">
                   {{ errorCountImage }}
                 </b-alert>
-                <div id="preview">
+                <div id="Aperçu">
                   <b-row class="mt-2">
                     <b-col cols="3" v-for="(img, index) in dispImg" :key="index">
                       {{ index + 1 }}
@@ -273,11 +273,11 @@
               <b-col cols="5">
                 <b-row>
                   <b-col>
-                    <b-button type="reset" variant="danger" block>Reset</b-button>
+                    <b-button type="reset" variant="danger" block>mise à zero</b-button>
                   </b-col>
                   <b-col>
                     <b-button  @click="addedProduct()" variant="primary" block type="submit">
-                      Submit
+                      Créer Produit
                     </b-button>
                   </b-col>
                 </b-row>

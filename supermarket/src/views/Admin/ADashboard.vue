@@ -4,8 +4,8 @@
       <b-container class="mt-5">
       <b-row align-v="center">
         <b-col>
-          <h3>Hello {{ user.firstName }} {{ user.lastName }},</h3>
-          <h5>Welcome to admin dashboard</h5>
+          <h3>Bienvenue {{ user.firstName }} {{ user.lastName }},</h3>
+          <h5>Bienvenue sur le tableau de bord d'administrateur'</h5>
         </b-col>
        
       </b-row>

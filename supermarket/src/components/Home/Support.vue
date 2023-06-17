@@ -14,8 +14,7 @@
                   <br />
                   <h5 class="mt-1">
                     <a style="text-decoration: none; color: #000;" href="#customer-support"
-                      >Fast Delivery <br>
-                      From the supermarket to your door.</a
+                      >Livraison rapide <br> Du supermarché à votre porte.</a
                     >
                   </h5>
                 </b-card>

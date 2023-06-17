@@ -5,9 +5,9 @@
         <b-row align-h="center">
           <div class="text-center">
             <div style="font-size: 100px">404</div>
-            <h4>Page Not Found.</h4>
-            <h6>This requested URL is not found on this server.</h6>
-            <a href="/"><b-icon icon="arrow-left" />Go back Home</a>
+            <h4>Page non trouvée.</h4>
+            <h6>Cette URL demandée est introuvable sur ce serveur.</h6>
+            <a href="/"><b-icon icon="arrow-left" />Retour à la page d'accueil</a>
           </div>
         </b-row>
       </b-container>

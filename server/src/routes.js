@@ -111,7 +111,7 @@ module.exports = (app) => {
     ProductsController.getProduct)
   app.get("/api/products/getProductId/:productTitle",
     ProductsController.getProductId)
-    app.get("/api/products/getProductById/:productTitle",
+  app.get("/api/products/getProductById/:productTitle",
     ProductsController.getProductById)
   app.get("/api/products/getProductRating/:productId",
     ProductsController.getProductRating)
@@ -120,10 +120,16 @@ module.exports = (app) => {
   app.post("/api/products/createProduct",
     ImageController.uploadProductImage,
     ProductsController.createProduct)
-  app.put("/api/products/updateProduct",
-    ProductsController.updateProduct)
+  app.put("/api/products/Admin-update-product/:productId",
+    ProductsController.AupdateProduct)
+  app.put("/api/products/Supplier-update-product/:productId",
+    ProductsController.SupdateProduct)
   app.delete("/api/products/deleteProduct/:productId",
     ProductsController.deleteProduct)
+  app.put("/api/products/quantity",
+    ProductsController.QuantityProduct)
+  app.post("/api/products/createHistoProduct",
+    ProductsController.createHistoProduct)
 
   // review
   app.get("/api/review/getReviewList/:productId",

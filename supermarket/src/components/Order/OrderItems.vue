@@ -7,7 +7,7 @@
               <b-card-img
                 :src="orderItem.Product.image1"
                 style="max-width: 14rem; max-height: 14rem"
-                alt="Image Not Found"
+                alt="Photo non trouvé"
               />
               <br />
               <b-link :to="{ path: `/product/${orderItem.Product.id}` }">
@@ -19,7 +19,7 @@
                 {{ orderItem.Product.currency }}
               </small>
               <br />
-              <small class="mt-2">Quantity: {{ orderItem.quantity }}</small>
+              <small class="mt-2">Quantité: {{ orderItem.quantity }}</small>
               <br />
               <small class="mt-2">
                 Cost: {{ orderItem.Product.amount * orderItem.quantity }}
@@ -31,7 +31,7 @@
       </b-row>
       <b-row>
         <b-col>
-          <h5 class="font-weight-bold">Current State</h5>
+          <h5 class="font-weight-bold">État actuel</h5>
           <hr />
           <b-row>
             <b-col cols="5">

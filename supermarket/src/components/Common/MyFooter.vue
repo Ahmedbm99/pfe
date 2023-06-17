@@ -10,13 +10,13 @@
             <h6>{{ company.details }}</h6>
           </b-col>
           <b-col cols="3">
-            <h3>Links</h3>
-            <b-link href="/profile" style="color:#fff">Your Account</b-link><br />
+            <h3>Liens</h3>
+            <b-link href="/profile" style="color:#fff">Mon Profile</b-link><br />
             <b-link href="/*" style="color:#fff">Terms &amp; Conditions</b-link><br />
           
           </b-col>
           <b-col cols="4">
-            <h3>Location</h3>
+            <h3>Localisation</h3>
             <div v-html="company.location" />
             <div class="mt-3">
               <b-icon icon="phone" /> {{ company.phoneNo }} <br />
@@ -43,9 +43,9 @@
         "email": "eshopcommerce11@gmail.com",
         "phoneNo": "+216 55491729",
         "location": "Sfax,Tunisie",
-         "header": "Find what you need here",
-         "motive": "Comfort and convenience.,EShopping is just a software project. It is developed to learn how to build a web application. Ive included all these data from the internet from different kind of source. And this is not a real ecommerce site.",
-        "details": "Created by Ahmed 3Ltic TEL",
+         "header": "Trouvez ce dont vous avez besoin ici",
+         "motive": "Confort et commodité.,EShopping n'est qu'un projet logiciel. Il est développé pour apprendre à créer une application Web. J'ai inclus toutes ces données provenant d'Internet à partir de différents types de sources. Et ce n'est pas un vrai site de commerce électronique.",
+        "details": "Créé par Ahmed 3Ltic TEL",
         },
       };
     },

@@ -1,10 +1,10 @@
 <template>
     <div>
       <div style="color: #001e5f" v-if="reviews != 0 && reviews != 1">
-        <h4>You made {{ reviews }} reviews on product.</h4>
+        <h4>Tu as fait {{ reviews }} avis sur le produit.</h4>
       </div>
       <div style="color: #001e5f" v-if="reviews == 0 || reviews == 1">
-        <h4>You made {{ reviews }} review on product.</h4>
+        <h4>Tu as fait {{ reviews }} avis sur le produit.</h4>
       </div>
   
       <div v-for="review in reviewList2" :key="review.id" class="mb-2">
@@ -19,7 +19,7 @@
               />
             </b-col>
             <b-col cols="9">
-              your review on&nbsp;
+             votre avis sur&nbsp;
               <b-link :to="`/product/${review.ProductId}`">
                 {{ review.Product.title }}
               </b-link>

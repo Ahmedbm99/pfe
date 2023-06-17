@@ -5,7 +5,7 @@
         <b-row align-h="center">
           <b-col cols="7">
             <b-card style="color: #001e5f">
-              <h4 class="font-weight-bold">Add Company</h4>
+              <h4 class="font-weight-bold">Ajouter une Entreprise</h4>
                 <b-form 
                 @submit.stop.prevent="newCompany"
                  class="mt-4">
@@ -28,8 +28,8 @@
                         v-if="Name"
                         :state="NameValidation"
                       >
-                        Your  name could be 15 character long.
-                      </b-form-invalid-feedback>
+                      Votre nom peut comporter 15 caractères.
+                    </b-form-invalid-feedback>
                     </b-form-group>
                     </b-col>
                   
@@ -51,8 +51,7 @@
                         v-if="phoneNumber"
                         :state="phoneNumberValidation"
                       >
-                        
-                        Your phone number must include at least 8 numbers   .
+                          Votre numéro de téléphone doit comporter au moins 8 chiffres.
                       </b-form-invalid-feedback>
                     </b-form-group>
                     </b-col>
@@ -95,7 +94,7 @@
                         v-if="patente"
                         :state="PatenteValidation"
                       >
-                        Your patente could be 8-32 character long.
+                        Votre patente peut contenir entre 8 et 32 caractères.
                     </b-form-invalid-feedback>
                     </b-form-group>
                     </b-col>
@@ -146,7 +145,7 @@
                         v-if="location"
                         :state="LocationValidation"
                       >
-                        Your Company location not found.
+                      Emplacement de votre entreprise introuvable.
                       </b-form-invalid-feedback>
                     
                     </b-form-group>
@@ -170,7 +169,7 @@
                         v-if="header"
                         :state="headerValidation"
                     >
-                        Your Company's header must have at least 32 character.
+                    L'en-tête de votre entreprise doit comporter au moins 32 caractères.
                         </b-form-invalid-feedback>
                     
                     </b-form-group>
@@ -181,7 +180,7 @@
                     <b-col cols="3" />
                     <b-col cols="6">
                     <b-button @click="addedCompany()" block type="submit" class="p-2" variant="warning">
-                      Add Company
+                     Ajouter une entreprise
                     </b-button>
                   </b-col>
                   <b-col cols="3" />

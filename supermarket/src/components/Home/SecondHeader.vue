@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: #8ecae6 ">
+    <div style="background-color: #a2d2ff ">
       <b-row align-v="center" class="text-center" style=" color: #ffffff">
         <b-col>
           <b-button
