@@ -158,7 +158,7 @@
           </b-row>
           <div class="mt-5 p-4" style="background-color: #eeeeee">
             <div>
-              <h3>Descrption</h3>
+              <h3>Description</h3>
               <div v-html="displayProduct.description" ></div>
             </div>
           </div>

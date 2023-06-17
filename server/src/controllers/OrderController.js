@@ -87,13 +87,13 @@ module.exports = {
 			var mailOptions = {
 				from: emailFrom,
 				to: order.email,
-				subject: "Check Order Status",
-				text: 'Hi ' + order.name + ',\n\n' +
-					'Thanks for your purchase!\n\n' +
-					'Please follow the link to keep track on your order.\n\n' +
-					'http://' + 'localhost:8080' + '/order/' + order.checkoutSessionId + '\n\n' +
-					'Your session Id: ' + order.checkoutSessionId + '\n\n' +
-					'Thanks for using eshopping\n'
+				subject: "Vérifier l\'état des commandes",
+				text: 'Salut ' + order.name + ',\n\n' +
+					'Merci pour votre achat\n\n' +
+					'Veuillez suivre le lien pour suivre votre commande.\n\n' +
+					'http://' + '127.0.0.1:8080' + '/order/' + order.checkoutSessionId + '\n\n' +
+					'Votre identifiant de session : ' + order.checkoutSessionId + '\n\n' +
+					'Merci pour votre fidélité EShopping\n'
 			}
 			await transporter.sendMail(mailOptions, function (err) {
 				if (err) {
