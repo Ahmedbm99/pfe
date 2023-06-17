@@ -63,12 +63,12 @@ module.exports = {
             var mailOptions = {
                 from: emailFrom,
                 to: req.body.email,
-                subject: "Email verification code to register",
-                text: 'Hi ' + user.firstName + ' ' + user.lastName + ',\n\n' +
-                    'Welcome to EShopping!\n\n' +
-                    'Your email verification code is: ' + token + '\n\n' +
-                    'Use this code to complete the registration process.\n\n' +
-                    'Enjoy using your EShopping account!\n'
+                subject: "Code de vérification par e-mail pour vous inscrire",
+                text: 'Salut ' + user.firstName + ' ' + user.lastName + ',\n\n' +
+                    'Bienvenue à EShopping!\n\n' +
+                    'Votre code de vérification par e-mail est :' + token + '\n\n' +
+                    'Utilisez ce code pour terminer le processus d\'inscription.\n\n' +
+                    'Profitez de l\'utilisation de votre compte EShopping !\n'
             }
             await transporter.sendMail(mailOptions, function (err) {
                 if (err) {
@@ -111,12 +111,12 @@ module.exports = {
                 var mailOptions = { 
                     from: emailFrom,
                     to: req.body.email,
-                    subject: "Email verification code to login",
-                    text: 'hello ' + user.firstName + ' ' + user.lastName + ',\n\n' + 'Recently you\'ve requested to create an account on EShopping\n\n' +
-                        'Please verify your email address first\n\n' +
-                        'click on the following link, or paste it into your browser to complete this process\n\n' +
+                    subject: " Code de vérification par e-mail pour vous connecter",
+                    text: 'Salut ' + user.firstName + ' ' + user.lastName + ',\n\n' + 'Récemment, vous avez demandé à créer un compte sur EShopping\n\n' +
+                        'Veuillez d\'abord vérifier votre adresse e-mail\n\n' +
+                        'cliquez sur le lien suivant ou collez-le dans votre navigateur pour terminer ce processus\n\n' +
                         'http://' + 'localhost:8080' + '/user-verify/' + token + '\n\n' +
-                        'If you did not request this, please ignore this email.\n'
+                        'Si vous ne l\'avez pas demandé, veuillez ignorer cet e-mail.\n'
                 }
                 await transporter.sendMail(mailOptions, function (err) {
                     if (err) {
@@ -210,11 +210,11 @@ module.exports = {
             var mailOptions = {
                 from: emailFrom,
                 to: req.body.email,
-                subject: "Reset Password Confirmation",
-                text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
-                    'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+                subject: "Réinitialiser la confirmation du mot de passe",
+                text: 'Vous recevez ceci parce que vous (ou quelqu\'un d\'autre) avez demandé la réinitialisation du mot de passe de votre compte.\n\n' +
+                    'Veuillez cliquer sur le lien suivant ou le coller dans votre navigateur pour terminer le processus :\n\n' +
                     'http://' + '127.0.0.1:8080' + '/reset-password/' + token + '\n\n' +
-                    'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+                    'Si vous ne l avez pas demandé, veuillez ignorer cet e-mail et votre mot de passe restera inchangé.\n'
             }
             await transporter.sendMail(mailOptions, function (err) {
                 if (err) {
@@ -299,12 +299,12 @@ module.exports = {
                 var mailOptions = {
                     from: emailFrom,
                     to: req.body.email,
-                    subject: "Email Verification to register",
-                    text: 'Hi ' + user.firstName + ' ' + user.lastName + ',\n\n' +
-                        'Welcome to EShopping!\n\n' +
-                        'Your email verification code is: ' + user.registerToken + '\n\n' +
-                        'Use this code to complete the registration process.\n\n' +
-                        'Enjoy using you EShopping account!\n'
+                    subject: "Vérification par e-mail pour vous inscrire",
+                    text: 'Salut ' + user.firstName + ' ' + user.lastName + ',\n\n' +
+                        'Bienvenue à EShopping!\n\n' +
+                        'Votre code de vérification par e-mail est : ' + user.registerToken + '\n\n' +
+                        'Utilisez ce code pour terminer le processus d\'inscription \n\n' +
+                        'Profitez de l\'utilisation de votre compte EShopping !\n'
                 }
                  await transporter.sendMail(mailOptions, function (err) {
                     
@@ -395,9 +395,9 @@ module.exports = {
             var mailOptions = {
                 from: emailFrom,
                 to: req.body.email,
-                subject: "Password Update Acknowledgement",
-                text: 'Hello ' + req.body.name + '\n\n' +
-                    'We wanted to let you know that your EShopping password was reset.\n'
+                subject: "Accusé de réception de la mise à jour du mot de passe",
+                text: 'Bienvenue ' + req.body.name + '\n\n' +
+                    'Nous voulions vous informer que votre mot de passe EShopping a été réinitialisé. \n'
             }
             await transporter.sendMail(mailOptions, function (err) {
                 if (err) {
@@ -436,10 +436,10 @@ module.exports = {
             var mailOptions = {
                 from: emailFrom,
                 to: req.body.email,
-                subject: "Email Address Verification Confirmed",
-                text: "Hello " + req.body.name + ",\n\n"
-                    + "Your email is now verified on EShopping.\n\n"
-                    + "Thank you.\n"
+                subject: "Vérification de l'adresse e-mail confirmée",
+                text: "Bienvenue " + req.body.name + ",\n\n"
+                    + " email est maintenant vérifié sur EShopping.\n\n"
+                    + "Merci.\n"
             }
             await transporter.sendMail(mailOptions, function (err) {
                 if (err) {
