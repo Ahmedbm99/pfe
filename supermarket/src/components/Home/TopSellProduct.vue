@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
       <b-row v-if="topSellProduct.length != 0">
         <b-col>
           <h3>{{ topSellViewTitle }}</h3>
@@ -19,14 +19,16 @@
                 <h6>Price: {{ product.amount }} {{ product.currency }}</h6>
                 <b-row class="mt-2" align-v="center">
                   <b-col>
-                    <b-form-rating
+                    <b-form-rating  
+
                       :precision="
                         Math.round(product.rating) == product.rating ? 0 : 1
                       "
+                      
                       size="sm"
                       show-value
                       show-value-max
-                      readonly
+                      
                       :value="product.rating"
                       variant="primary"
                     />

@@ -6,7 +6,7 @@
             class="py-3"
             toggleable="lg"
             type="dark"
-            style="background-color: #0077b6"
+            style="background-color: #ffd60a"
           >
             <b-navbar-brand href="/">
               <b-img src="http://localhost:8084/public/company/EShopping/logo.png" al t="logo" width="70px" height="60px" />
@@ -17,7 +17,7 @@
                 <b-dropdown
                   id="dropdown-right"
                   :text="searchCategoryName"
-                  style="background-color: #0077b6 "
+                  style="background-color: #ffd60a "
                   variant="light"
                   class="mr-auto"
                 >

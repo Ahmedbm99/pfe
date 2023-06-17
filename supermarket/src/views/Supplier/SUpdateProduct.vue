@@ -362,7 +362,7 @@
         ProductsService.SupdateProduct(this.product)
           .then(() => {
             // Handle success
-            this.$router.push({ path: "products"});
+           window.location.reload();
           })
           .catch((error) => {
             // Handle error

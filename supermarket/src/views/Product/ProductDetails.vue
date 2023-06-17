@@ -147,7 +147,10 @@
                       <b-icon-cart-fill />
                       Passer maintenant
                     </b-button>
-                    <b-button @click="Update">
+                    <b-button @click="Update()" v-if="user.priority == 1" >
+                    Mettre à jour
+                  </b-button>
+                  <b-button @click="Update()" v-if="user.priority == 2" >
                     Mettre à jour
                   </b-button>
                   
