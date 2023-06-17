@@ -14,16 +14,16 @@
               <strong>ID</strong>
             </b-col>
             <b-col cols="3">
-              <strong>Full Name</strong>
+              <strong>Nom et Prénom</strong>
             </b-col>
             <b-col cols="3">
               <strong>Email</strong>
             </b-col>
             <b-col cols="2">
-              <strong>Order        Price</strong>
+              <strong>Commande        Prix</strong>
             </b-col>
             <b-col cols="3" class="text-center">
-              <strong>Status</strong>
+              <strong>Statuts</strong>
               <b-dropdown
                 size="sm"
                 id="dropdown-left"
@@ -91,7 +91,7 @@
           </div>
         </div>
         <div class="mt-5 d-flex justify-content-center" v-if="orders == 0">
-          <h3>Order not found...</h3>
+          <h3>Pas de commandes trouvés...</h3>
         </div>
         <b-pagination
           v-if="orders != 0"
