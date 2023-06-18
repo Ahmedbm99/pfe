@@ -31,10 +31,12 @@ export const CartModule = {
         const index = state.cartProducts.findIndex(
           (obj) => obj.productId == productId
         );
+     
         return index;
       },
       async addToCart({ commit, dispatch }, cartItem) {
         const index = await dispatch("getCartItem", cartItem.productId);
+        
         if (index == -1) {
           commit("ADD_CART_ITEM", cartItem);
           return 0;

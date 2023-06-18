@@ -126,7 +126,7 @@
 
 import OrderService from "@/services/OrderService.js";
 import OrderItemService from "../../services/OrderItemService";
-import ProductsService from "../../services/ProductsService.js";
+//import ProductsService from "../../services/ProductsService.js";
 
 
 export default {
@@ -144,19 +144,23 @@ export default {
       checkoutProduct: null,
       orderid : 4, 
       quantityValidation : true,
-      sales: 2,  
+      //sales: 2,  
       products: [],
+      product: [],
     };
   },
   computed: {},
   mounted() {
+    
     this.checkoutProduct = this.$store.state.Cart.cartProducts;
+
+    console.log(this.$store.state.Cart.cartProducts[0]);
     var i;
     for (i = 0; i < this.checkoutProduct.length; i++) {
       this.subTotalAmount +=
         this.checkoutProduct[i].amount * this.checkoutProduct[i].quantity;
       this.products[i] = this.checkoutProduct[i].quantity;
-      console.log(this.products[i]);
+    
     }
     this.totalAmount = this.subTotalAmount + this.shippingRate;
    
@@ -203,15 +207,13 @@ export default {
         },
         quantity: 1,
       });
-      console.log(this.products[0]);
-      console.log(this.sales);
-      console.log(this.products[0]> this.sales);
-        
+     console.log(this.checkoutProduct[0].quantity +"hi")
+     console.log(this.checkoutProduct[0].sales +"ha")
        
        try {
         for (i = 0; i < this.checkoutProduct.length; i++) {
 
-          if(this.products[i] > this.sales){
+          if(this.checkoutProduct[i].quantity > this.checkoutProduct[i].sales){
           
             this.quantityValidation = false;
             this.$bvToast.toast("Quantité non suffisantes", {
@@ -223,10 +225,8 @@ export default {
           });
           }else 
 
-          this.checkoutProduct[i].sales -= this.checkoutProduct[i].quantity; 
-          var product = (await ProductsService.QuantityProduct(this.checkoutProduct[i].sales , this.checkoutProduct[i].title))
-          console.log(product)
-        
+         console.log("ok")
+          
         } 
         if (this.quantityValidation){
          

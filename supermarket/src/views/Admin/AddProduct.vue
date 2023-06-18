@@ -485,8 +485,8 @@
         }
       },
       async addedProduct(){ 
-      this.$bvToast.toast("The company has been added successfully", {
-            title: "ADD",
+      this.$bvToast.toast("cette entreprise a ajouté un produit avec succès ", {
+            title: "Ajouté",
             variant: "success",
             toaster: "b-toaster-top-center",
             noCloseButton: false,

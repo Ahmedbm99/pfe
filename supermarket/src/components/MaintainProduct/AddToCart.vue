@@ -54,6 +54,7 @@
       };
     },
     async mounted() {
+      this.userId = this.$store.state.CurrentUser.userId;
       this.validCartItem = await this.$store.dispatch(
         "Cart/getCartItem",
         this.productId
@@ -61,6 +62,16 @@
     },
     methods: {
       async addToCart() {
+        if (this.userId == 0) {
+          this.$bvToast.toast("Veuillez vous connecter pour enregistrer sur le chariot", {
+            title: "Chariot",
+            variant: "danger",
+            toaster: "b-toaster-top-center",
+            noCloseButton: false,
+            solid: true,
+          });
+          return;
+        }
         const cartItem = {
           sales: this.sales,
           productId: this.productId,

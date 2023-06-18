@@ -125,6 +125,7 @@
                     :image="displayProduct.image1"
                     :title="displayProduct.title"
                     :amount="displayProduct.amount"
+                    :sales="displayProduct.sales"
                   />
                   <AddToWishlist
                     class="ml-3"
@@ -138,6 +139,7 @@
                 <b-row>
                   <b-col cols="8">
                     <b-button
+                     v-if="this.userLoggedIn"
                       @click="buyNow"
                       class="mt-3"
                       size="lg"
@@ -147,10 +149,20 @@
                       <b-icon-cart-fill />
                       Passer maintenant
                     </b-button>
-                    <b-button @click="Update()" v-if="user.priority == 1" >
+                    <b-button @click="Update()"
+                    size="lg"
+                    class="mt-3"
+                    variant="warning"
+                    block
+                    v-if="user.priority == 1" >
                     Mettre à jour
                   </b-button>
-                  <b-button @click="Update()" v-if="user.priority == 2" >
+                  <b-button @click="Update()"
+                  size="lg"
+                  class="mt-3"
+                  variant="warning "
+                  block
+                  v-if="user.priority == 2" >
                     Mettre à jour
                   </b-button>
                   
@@ -223,6 +235,7 @@
       const productId = parseInt(this.$route.params.productId);
       try {
         this.displayProduct = (await ProductsService.getProduct(productId)).data;
+        console.log(this.displayProduct.sales);
         this.validParam = Object.keys(this.displayProduct).length != 0;
         console.log(this.displayProduct.description);
         this.forceRerender();
@@ -251,6 +264,7 @@
         }else
          this.$router.push(`/Admin-update-product/${productId}`);
       },
+   
       async buyNow() {
         const buyProduct = {
           productId: this.displayProduct.id,
@@ -259,6 +273,8 @@
           rating: this.displayProduct.rating,
           currency: this.displayProduct.currency,
           amount: this.displayProduct.amount,
+          sales: this.displayProduct.sales,
+          
           quantity: 1,
         };
         await this.$store.dispatch("Cart/addToCart", buyProduct);

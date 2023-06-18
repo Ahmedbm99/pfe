@@ -47,6 +47,7 @@
                     :image="product.image1"
                     :title="product.title"
                     :amount="product.amount"
+                    :sales="product.sales"
                   />
                   <AddToWishlist
                     class="mt-2"

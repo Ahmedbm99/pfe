@@ -129,8 +129,8 @@
     methods: {
       wishlist() {
         if (!this.userLoggedIn) {
-          this.$bvToast.toast("Please login for the wishlist", {
-            title: "Wishlist",
+          this.$bvToast.toast("Veuillez vous connecter pour la Liste de souhaits", {
+            title: "Liste de souhaits",
             variant: "primary",
             toaster: "b-toaster-top-center",
             noCloseButton: false,
@@ -142,8 +142,8 @@
       },
       cart() {
         if (!this.userLoggedIn) {
-          this.$bvToast.toast("Please login for the cart", {
-            title: "Cart",
+          this.$bvToast.toast("Veuillez vous connecter pour le chariot", {
+            title: "Chariot",
             variant: "primary",
             toaster: "b-toaster-top-center",
             noCloseButton: false,
