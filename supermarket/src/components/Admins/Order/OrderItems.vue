@@ -51,24 +51,7 @@
               </b-dropdown>
             </b-col>
           </b-row>
-          <b-row class="mt-4">
-            <b-col>
-              <h5 class="font-weight-bold">Supprimer la commande</h5>
-              <hr />
-              <b-row>
-                <b-col cols="5">
-                  <b-button block disabled variant="danger">Supprimer </b-button>
-                </b-col>
-              </b-row>
-              <b-row class="mt-2" v-if="orderStatus == 'complete'">
-                <b-col>
-                  <small>
-                      Nous n'autorisons personne à supprimer des informations de commande.
-                  </small>
-                </b-col>
-              </b-row>
-            </b-col>
-          </b-row>
+         
         </b-col>
       </b-row>
     </div>
@@ -95,20 +78,17 @@
         orderStatus: this.orderInfo.status,
         statusVariant: this.orderInfo.variant,
         allStatus: [
+         
           {
-            name: "paid",
-            variant: "dark",
-          },
-          {
-            name: "preparing",
+            name: "en cours",
             variant: "info",
           },
           {
-            name: "on the way",
+            name: "en chemin",
             variant: "warning",
           },
           {
-            name: "complete",
+            name: "complète",
             variant: "success",
           },
         ],

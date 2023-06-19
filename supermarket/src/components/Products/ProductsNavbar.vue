@@ -50,7 +50,9 @@
                   size="m"
                   variant="outline-dark"
                   
-                  > <b-icon class="mr-1" variant="primary" icon="plus-square" />
+                  >Ajouter Produit 
+                  <b-icon class="mr-1" variant="primary" icon="plus-square" />
+                  
                 </b-button>
                   <b-button
                   v-if="supplier === 2"
@@ -59,9 +61,9 @@
                   size="m"
                   variant="outline-dark" 
                 >
-                
+                Ajouter Produit
                   <b-icon  class="mr-1" variant="primary" icon="plus-square" />
-                  Ajouter Produit
+                  
                 </b-button>
               </b-navbar-nav>
          

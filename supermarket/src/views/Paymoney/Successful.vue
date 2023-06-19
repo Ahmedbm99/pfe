@@ -66,7 +66,7 @@
             email: req.body.customerEmail,
             phoneNo: req.body.customerPhoneNo,
             address: req.body.shippingAddress,
-            status: "preparing",
+            status: "en cours",
             variant: "dark",
             checkoutSessionId: 25,
             productCost: req.body.totalAmount ,

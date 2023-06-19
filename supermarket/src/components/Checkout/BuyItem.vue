@@ -238,7 +238,7 @@ export default {
             email: customerEmail,
             phoneNo: customerPhoneNo,
             address: shippingAddress,
-            status: "preparing",
+            status: "en cours",
             variant: "dark",
             checkoutSessionId: 76,
             productCost: this.totalAmount,

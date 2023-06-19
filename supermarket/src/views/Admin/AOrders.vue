@@ -129,20 +129,17 @@
         orderList: null,
         orderList2: null,
         orderStatus: [
+          
           {
-            name: "paid",
-            variant: "dark",
-          },
-          {
-            name: "preparing",
+            name: "en cours ",
             variant: "info",
           },
           {
-            name: "on the way",
+            name: "en chemin",
             variant: "warning",
           },
           {
-            name: "complete",
+            name: "complète",
             variant: "success",
           },
         ],
