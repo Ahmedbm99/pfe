@@ -25,6 +25,7 @@ import AOrders from "@/views/Admin/AOrders.vue";
 import AOrder from "@/views/Admin/AOrder.vue";
 import AProfile from "@/views/Admin/AProfile.vue";
 import AddProduct from "@/views/Admin/AddProduct.vue";
+import SAddProduct from "@/views/Supplier/SAddProduct.vue";
 import Unauthorized from "@/views/ErrorPage/Unauthorized.vue";
 import NotFound from "@/views/ErrorPage/NotFound.vue";
 import SProfile from "@/views/Supplier/SProfile.vue";
@@ -214,7 +215,7 @@ const routes = [
   {
     path: "/supplier/add-product",
     name: "supplier-add-product",
-    component: AddProduct,
+    component: SAddProduct,
     meta: { requiresAuth: true, title: "Add product | EShopping" },
   },
   {
@@ -253,8 +254,10 @@ router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const admin = store.state.CurrentUser.admin;
+  
+  
   const priority=store.state.CurrentUser.priority;
-  if (requiresAuth && !admin) {
+  if (requiresAuth && !admin ) {
     next("/error/401");
   } else if (requiresAuth && admin && priority ==2) {
     next();

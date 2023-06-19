@@ -110,7 +110,7 @@
           <b-icon-x small variant="light"></b-icon-x>
           
         </b-button>
-        <b-button block variant="success" to="/successful">Confirme</b-button>
+        <b-button block variant="success" @click="removeCartItem()" to="/successful">Confirme</b-button>
       </b-col>
 
     </b-row>
@@ -166,7 +166,7 @@ export default {
    
   },
   methods: {
-
+    
 
 
     async checkoutApplied() {
@@ -240,7 +240,7 @@ export default {
             address: shippingAddress,
             status: "preparing",
             variant: "dark",
-            checkoutSessionId: 52,
+            checkoutSessionId: 76,
             productCost: this.totalAmount,
             currency :"TND",
             shippingCost: 4.000,

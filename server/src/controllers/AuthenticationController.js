@@ -14,6 +14,15 @@ function jwtSignUser(user) {
 }
 
 module.exports = {
+    async registerSupplier(req,res){
+        req.body.profileImage = "http://localhost:8084/public/user-image/default-man.png"
+        req.body.priority =2
+        req.body.variant = "info "
+        req.body.CompanyId=9
+        console.log(req.body.CompanyId)
+        const user = await User.create(req.body);
+        res.send({ id: user.id })
+    },
     async register(req, res) {
         
         try {

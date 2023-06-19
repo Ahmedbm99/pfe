@@ -4,7 +4,7 @@
       <b-container class="mt-2">
         <b-row>
           <b-col class="text-center">
-            <h3>Users</h3>
+            <h3>Utilisateurs</h3>
           </b-col>
         </b-row>
         <hr />
@@ -37,13 +37,13 @@
                     <strong>Email</strong>
                   </b-col>
                   <b-col>
-                    <strong>Name</strong>
+                    <strong>Nom et prénom</strong>
                   </b-col>
                   <b-col>
-                    <strong>Phone No.</strong>
+                    <strong>Numéro telephone</strong>
                   </b-col>
                   <b-col class="text-center">
-                    <strong>Status</strong>
+                    <strong>Etat</strong>
                     <b-dropdown
                       size="sm"
                       id="dropdown-left"
@@ -184,13 +184,13 @@
             variant: "dark",
           },
           {
-            name: "Customer",
+            name: "Client",
             priority: 3,
             description: "End user of the system.",
             variant: "warning",
           },
           {
-            name: "Supplier",
+            name: "Fournisseur",
             priority: 2,
             description: "User and supplier of this system.",
             variant: "info",

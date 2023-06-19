@@ -17,6 +17,8 @@ const AuthenticationControllerPolicy = require("./policies/AuthenticationControl
 
 module.exports = (app) => {
   // authentication
+  app.post("/api/auth/registerSupplier",
+    AuthenticationController.registerSupplier)
   app.post("/api/auth/register",
     AuthenticationControllerPolicy.register,
     AuthenticationController.register)

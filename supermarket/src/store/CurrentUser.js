@@ -11,7 +11,7 @@ export const CurrentUserModule = {
       newUserEmail: "",
       newUserId: 0,
       userLoggedIn: false,
-      
+      supplier: false,
       
     },
   
@@ -31,15 +31,16 @@ export const CurrentUserModule = {
         state.user = user;
         if (Object.keys(user).length != 0) {
           state.userId = user.id;
-          if (user.priority == 1) {
+          if (state.user.priority == 1) {
             state.admin = true;
-          }if(user.priority == 2) {
+           
+          }if(state.user.priority == 2) {
             state.admin = true;
-          
+            state.supplier = true;
           }
         } else {
           state.admin = false;
-          
+          state.supplier= false;
           state.userId = 0;
         }
       },

@@ -113,7 +113,7 @@
             </b-col>
             <b-col cols="8" />
             <b-col cols="2">
-              <b-button to="/checkout" block variant="primary">
+              <b-button to="/checkout"  @click="resetCart()"  block variant="primary">
                 <b-icon icon="cursor-fill" />
                 Acheter
               </b-button>
@@ -139,12 +139,14 @@
     },
     data() {
       return {
+        
       
         selectedcurrency: "TND",
       };
     },
     mounted() {},
     computed: {
+        
       ...mapState({
         cartProducts: (state) => state.Cart.cartProducts,
       }),
@@ -161,7 +163,10 @@
       },
     },
     methods: {
-     
+      async resetCart() {
+       
+        this.cartProducts=[];
+      },
       async quantityInc(product) {
         await this.$store.dispatch("Cart/updateCartItemQuantity", {
           productId: product.productId,
@@ -176,6 +181,7 @@
           });
         }
       },
+     
       async removeCartItem(product) {
         const itemIndex = await this.$store.dispatch(
           "Cart/removeCartItem",

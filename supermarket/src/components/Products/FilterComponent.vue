@@ -65,7 +65,7 @@
           } else {
             newRoute += "&";
           }
-          newRoute += "hi=" + this.maxPrice;
+          newRoute += "hi=" +  this.maxPrice;
         }
         this.$router.push({ path: newRoute });
       },

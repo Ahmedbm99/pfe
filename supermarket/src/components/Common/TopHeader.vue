@@ -121,6 +121,8 @@
     async mounted() {
       this.companyLogo = await this.$store.dispatch("http://localhost:8084/public/company/EShopping/eshopping.png"); 
       this.user = this.$store.state.CurrentUser.user;
+      console.log(this.$store.state.CurrentUser.user + ": " + this.$store.state.CurrentUser.user.priority)
+      console.log(this.$store.state.CurrentUser.supplier)
       this.admin = this.$store.state.CurrentUser.admin;
       this.userLoggedIn = this.$store.state.CurrentUser.userLoggedIn;
       this.categoryList = await this.$store.dispatch("Category/getCategoryList");
@@ -158,7 +160,7 @@
         this.$store.dispatch("CurrentUser/setUser", {});
         this.$store.dispatch("Wishlist/clearWishlist");
         
-        this.$store.dispatch("Cart/clearCart" , [] );
+        this.$store.dispatch("Cart/clearCart"  );
         window.location.reload();
       },
       set_category(category) {

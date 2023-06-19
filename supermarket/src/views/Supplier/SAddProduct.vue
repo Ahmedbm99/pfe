@@ -314,15 +314,15 @@
         categoryList: [],
         subCategoryList: [],
         subSubCategoryList: [],
-        productCategoryMessage: "Select product category.",
+        productCategoryMessage: "Selectionner catégorie de votre produit.",
         productCategoryAlert: false,
-        productSubTitleMessage: "Add product overview text.",
+        productSubTitleMessage: "Ajouter sous titre de produit.",
         productSubTitleAlert: false,
-        productDescriptionMessage: "Add proper description for this product.",
+        productDescriptionMessage: "Ajouter description pour produit.",
         productDescriptionAlert: false,
-        selectedCategory: "Category Name",
-        selectedSubCategory: "Sub Category Name",
-        selectedSubSubCategory: "Sub Sub Category Name",
+        selectedCategory: "Nom de catégorie",
+        selectedSubCategory: "Nom de sous catégorie",
+        selectedSubSubCategory: "Nom de sous-sous-catégorie",
         backupProduct: null,
         product: {
           code: "",
@@ -339,7 +339,7 @@
           SubSubCategoryId: 0,
         },
         errorCountImage:
-          "You are not allowed to add more than 10 image for any product.",
+          "tu ne peux pas dépasser 10 photos .",
         maximumImageCount: 10,
         imageAlert: false,
         dispImg: [],
@@ -380,8 +380,7 @@
           this.productDescriptionAlert = true;
           return;
         }
-        this.product.subtitle = this.product.subtitle;
-        this.product.description = this.product.description;
+       
         var formData = new FormData();
         var fieldName;
         for (fieldName in this.product) {
@@ -479,8 +478,8 @@
         }
       },
       async addedProduct(){ 
-      this.$bvToast.toast("The company has been added successfully", {
-            title: "ADD",
+      this.$bvToast.toast("produit a été ajouter", {
+            title: "Ajouter",
             variant: "success",
             toaster: "b-toaster-top-center",
             noCloseButton: false,

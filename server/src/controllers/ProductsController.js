@@ -282,6 +282,7 @@ module.exports = {
   async deleteProduct(req, res) {
     try {
       const productId = req.params.productId;
+      console.log(productId)
       const product = await Product.findByPk(productId);
       if (!product) {
         return res.status(403).send({

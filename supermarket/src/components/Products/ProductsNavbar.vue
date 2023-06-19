@@ -44,16 +44,18 @@
                 </b-nav-item>
                 <b-button
                   class="mr-auto"
+                  v-if="admin === 1 "
                   to="/admin/add-product"
-                  v-if="admin"
+                  
                   size="m"
                   variant="outline-dark"
                   
                   > <b-icon class="mr-1" variant="primary" icon="plus-square" />
                 </b-button>
                   <b-button
-                   to="/supplier/add-product"
-                  v-else-if="supplier"
+                  v-if="supplier === 2"
+                  to="/supplier/add-product"
+                  
                   size="m"
                   variant="outline-dark" 
                 >
@@ -80,6 +82,8 @@
     components: {},
     data() {
       return {
+        adminn: false,
+        supplierr: false,
         admin: false,
         supplier:false,
         searchText: "",
@@ -89,8 +93,13 @@
       };
     },
     async mounted() {
-      this.admin = this.$store.state.CurrentUser.admin;
-      this.supplier = this.$store.state.CurrentUser.s;
+   
+      this.admin = this.$store.state.CurrentUser.user.priority;
+      this.supplier = this.$store.state.CurrentUser.user.priority;
+      console.log(this.admin);
+      console.log(this.$store.state.CurrentUser);
+      console.log(this.$store.state.CurrentUser.user.priority)
+      console.log(this.supplier);
       if (this.$route.query.q) this.searchText = this.$route.query.q;
   
       if (this.$route.params.subSubCategory) {

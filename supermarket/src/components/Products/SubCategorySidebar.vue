@@ -7,7 +7,7 @@
             class="mb-1"
           >
             <b-row v-if="subCategory.mode == 0">
-              <div :class="{ 'col-12': !admin, 'col-8': admin }">
+              <div :class="{'col-12': !adminS  ===1 || !supplierA ===2, 'col-8': adminS ===1 || supplierA === 3  }">
                 <b-link
                   variant="white"
                   :to="`${$route.path}/${subCategory.name}`"
@@ -23,7 +23,7 @@
                 </b-link>
               </div>
   
-              <b-col cols="4" v-if="admin">
+              <b-col cols="4" v-if="admin ">
                 <b-button-toolbar>
                   <b-button-group size="sm">
                     <b-button @click="subCategory.mode ^= 1" variant="white">
@@ -91,7 +91,7 @@
             </b-form>
           </li>
         </div>
-        <div v-if="admin">
+        <div v-if="adminS === 1 || supplierA ===2 ">
           <b-card>
             <b-form @submit.stop.prevent="createNewSubCateg">
               <b-form-group>
@@ -128,10 +128,13 @@
     computed: {
       ...mapState({
         admin: (state) => state.CurrentUser.admin,
+    
       }),
     },
   
     async mounted() {
+      this.adminS = this.$store.state.CurrentUser.user.priority;
+      this.supplierA = this.$store.state.CurrentUser.user.priority;
       this.searchParameter = this.$store.state.Products.searchParameter;
       this.subCategoryList = await this.$store.dispatch(
         "Category/getSubCategoryList"

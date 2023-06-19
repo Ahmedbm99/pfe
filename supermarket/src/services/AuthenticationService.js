@@ -1,6 +1,9 @@
 import Api from "./Api";
 
 export default {
+  registerSupplier(credentials) {
+    return Api().post("/api/auth/registerSupplier", credentials);
+  },
   register(credentials) {
     return Api().post("/api/auth/register", credentials);
   },

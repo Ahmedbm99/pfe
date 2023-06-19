@@ -167,7 +167,7 @@
                 <b-row class="mt-3">
                   <b-col cols="3" />
                   <b-col cols="6">
-                    <b-button block type="submit" class="p-2" variant="warning">
+                    <b-button @click="addedSupplier()" block type="submit"  class="p-2" variant="warning">
                        Créer un compte
                     </b-button>
                   </b-col>
@@ -186,8 +186,7 @@
   
   <script>
   import AuthenticationService from "@/services/AuthenticationService.js";
-  import CompanyService from "@/services/CompanyService.js";
-
+ 
   import ATopHeader from "@/components/Admins/ATopHeader.vue";
   import MyFooter from "@/components/Common/MyFooter.vue";
   export default {
@@ -284,29 +283,38 @@
            
         )
           return;
+          
         try {
-          const CompanyID = await CompanyService.getCompanyByName(this.companyName);
-          const user = await AuthenticationService.register({
+          
+          const user = await AuthenticationService.registerSupplier({
             firstName: this.firstName,
             lastName: this.lastName,
             email: this.email,
-            password: this.password,
-            priority:this.priority,
-            companyName:this.companyName,
+            password: this.password,        
             phoneNo:this.phoneNumber
   
           });
-        
+          console.log(user.data)
+         
           this.$store.dispatch("CurrentUser/setNewUserId", user.data.id);
           this.$store.dispatch("CurrentUser/setNewUserEmail", this.email);
-          this.$store.dispatch("CurrentUser/SET_COMPANY_ID", CompanyID);
+       
          
-          this.$router.push({ path: "/user-verify" });
+          this.$router.push({ path: "/admin" });
         } catch (error) {
           this.validEmail = false;
           this.emailMessage = error.response.data.error;
         }
       },
+      async addedSupplier(){ 
+      this.$bvToast.toast("Fournisseur a été ajouté avec succès ", {
+            title: "Ajouter Fournisseur",
+            variant: "success",
+            toaster: "b-toaster-top-center",
+            noCloseButton: false,
+            solid: true,
+          });
+        },
     },
   };
   </script>

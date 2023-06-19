@@ -215,7 +215,7 @@
               </vue-editor>
             </b-form-group>
   
-            <b-button type="submit" @click="update()" variant="primary">Mettre à jour le produit</b-button>
+            <b-button @click="update()" type="submit"  variant="primary">Mettre à jour le produit</b-button>
           </b-form>
         </b-card>
       </b-container>

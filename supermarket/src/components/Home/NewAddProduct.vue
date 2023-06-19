@@ -82,7 +82,7 @@
         cartComponentKey: 0,
         wishlistKey: 2,
         newAddLimit: 4,
-        newAddViewTitle: "Ajouté récemment",
+        newAddViewTitle: "Ajoutés récemment",
       };
     },
     async mounted() {

@@ -3,7 +3,7 @@
       <ul style="list-style: none">
         <li v-for="category in categoryList" :key="category.id" class="mb-1">
           <b-row v-if="category.mode == 0">
-            <div :class="{ 'col-12': !admin, 'col-8': admin }">
+            <div :class="{'col-12': !admin , 'col-8': admin  }">
               <b-link variant="white" :to="`/products/${category.name}`">
                 <small>{{ category.name }}</small>
                 <b-icon
@@ -16,7 +16,7 @@
               </b-link>
             </div>
   
-            <b-col cols="4" v-if="admin">
+            <b-col cols="4" v-if="admin  " >
               <b-button-toolbar>
                 <b-button-group size="sm">
                   <b-button @click="category.mode ^= 1" variant="white">
@@ -80,7 +80,7 @@
             </b-row>
           </b-form>
         </li>
-        <div v-if="admin">
+        <div v-if="admin ">
           <b-card>
             <b-form @submit.stop.prevent="createNewCateg">
               <b-form-group>
@@ -97,6 +97,7 @@
             </b-form>
           </b-card>
         </div>
+        
       </ul>
     </div>
   </template>
@@ -111,20 +112,30 @@
       return {
         newCategory: "",
         categoryList: [],
+        adminn : false,
+        supplierr : false,
+        check : false,
+        
       };
     },
     computed: {
       ...mapState({
         admin: (state) => state.CurrentUser.admin,
+      
+        
       }),
     },
   
     async mounted() {
+      this.adminS = this.$store.state.CurrentUser.user.priority;
+      this.supplierA = this.$store.state.CurrentUser.user.priority;
       this.categoryList = await this.$store.dispatch("Category/getCategoryList");
       this.categoryList = this.categoryList.map((obj) => ({
         ...obj,
         mode: 0,
       }));
+     
+     
     },
     methods: {
       async createNewCateg() {

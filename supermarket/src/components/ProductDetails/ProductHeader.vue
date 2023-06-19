@@ -35,7 +35,7 @@
             </b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
-            <b-button v-if="admin" @click="deleteProduct" variant="danger">
+            <b-button v-if="admin" @click="deleteProduct()" variant="danger">
               <b-icon icon="trash" />
               Supprimer article
             </b-button>

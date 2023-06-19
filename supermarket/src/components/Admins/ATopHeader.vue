@@ -66,6 +66,8 @@
         this.$store.dispatch("CurrentUser/setToken", "");
         this.$store.dispatch("CurrentUser/setUser", {});
         this.$store.dispatch("Wishlist/clearWishlist");
+        this.$store.dispatch("Cart/clearCart");
+        
         this.$router.push({ path: "/" });
       },
     },

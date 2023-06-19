@@ -16,7 +16,7 @@
               <b-col>
                 <b-form-group
                   id="input-group-title"
-                  label="Product Title"
+                  label="Nom Produit "
                   label-for="input-title"
                 >
                   <b-form-input
@@ -30,7 +30,7 @@
                   <b-col>
                     <b-form-group
                       id="input-group-amount"
-                      label="Price"
+                      label="Prix"
                       label-for="input-amount"
                     >
                       <b-form-input
@@ -44,7 +44,7 @@
                   <b-col>
                     <b-form-group
                       id="input-group-currency"
-                      label="currency"
+                      label="devise"
                       label-for="input-currency"
                     >
                       <b-form-input
@@ -59,7 +59,7 @@
                 <div>
                   <b-form-group
                     id="input-sales"
-                    label="Quantity"
+                    label="Quantité"
                     label-for="input-sales"
                     
                   > <b-form-input
@@ -70,7 +70,7 @@
                 </b-form-group>
                   <b-form-group
                     id="input-group-overview"
-                    label="Overview"
+                    label="sous titre"
                     label-for="input-overview"
                   >
                     <vue-editor

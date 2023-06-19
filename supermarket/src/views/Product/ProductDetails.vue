@@ -139,8 +139,8 @@
                 <b-row>
                   <b-col cols="8">
                     <b-button
-                     v-if="this.userLoggedIn"
-                      @click="buyNow"
+                     
+                      @click="buyNow()"
                       class="mt-3"
                       size="lg"
                       variant="success"
@@ -231,6 +231,7 @@
       };
     },
     async mounted() {
+      this.userId = this.$store.state.CurrentUser.userId;
       this.user = this.$store.state.CurrentUser.user;
       const productId = parseInt(this.$route.params.productId);
       try {
@@ -266,6 +267,16 @@
       },
    
       async buyNow() {
+        if (this.userId == 0) {
+          this.$bvToast.toast("Veuillez vous connecter pour passer la commande", {
+            title: "Passer Commande",
+            variant: "danger",
+            toaster: "b-toaster-top-center",
+            noCloseButton: false,
+            solid: true,
+          });
+          return;
+        }
         const buyProduct = {
           productId: this.displayProduct.id,
           title: this.displayProduct.title,
