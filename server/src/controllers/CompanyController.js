@@ -64,7 +64,7 @@ module.exports = {
             })
 			if (!company) {
                 return res.status(403).send({
-                    error: "Company not found."
+                    error: "Aucune Entreprise trouvé."
                 })
             }
             res.send(company)

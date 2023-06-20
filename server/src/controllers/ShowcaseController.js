@@ -23,7 +23,7 @@ module.exports = {
 			}
 			else {
 				return res.status(403).send({
-					error: "You don't have permission to create a showcase item."
+					error: "Vous n'êtes pas autorisé à créer un élément vitrine."
 				})
 			}
 		} catch (err) {
@@ -43,7 +43,7 @@ module.exports = {
 				})
 			} else {
 				return res.status(403).send({
-					error: "You don't have permission to update a showcase item."
+					error: "Vous n'êtes pas autorisé à mettre à jour un élément de la vitrine."
 				})
 			}
 			res.send(req.body)
@@ -64,7 +64,7 @@ module.exports = {
 				res.send({ id: req.params.showcaseItemId })
 			} else {
 				return res.status(403).send({
-					error: "You don't have permission to do delete a showcase item."
+					error: "Vous n'êtes pas autorisé à supprimer un élément de la vitrine."
 				})
 			}
 		} catch (err) {

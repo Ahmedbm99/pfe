@@ -5,12 +5,12 @@
         <b-row align-h="center">
           <b-col cols="7">
             <b-card style="color: #001e5f">
-              <h4 class="font-weight-bold">New Contract</h4>
+              <h4 class="font-weight-bold">Nouveau contrat</h4>
               <b-form @submit.stop.prevent="newContract" class="mt-4">
                 <b-row>
                   <b-col>
                     <b-form-group  id="input-start"
-                      label="Company Name"
+                      label="Nom d'Entreprise"
                       label-for="input-name"
                       >
                       <b-form-input
@@ -24,7 +24,7 @@
                         v-if="companyName"
                         :state="NameValidation"
                       >
-                        Your  name could be 15 character long.
+                      Votre nom peut comporter 15 caractères.
                       </b-form-invalid-feedback>
                     </b-form-group>
                   </b-col>
@@ -33,7 +33,7 @@
                   <b-col>
                     <b-form-group
                       id="input-start"
-                      label="Start Date"
+                      label="Date Début"
                       label-for="input-start"
                     >
                       <b-form-input
@@ -51,7 +51,7 @@
                 <b-col>
                     <b-form-group
                       id="input-end"
-                      label="End Date"
+                      label="Date Fin"
                       label-for="input-end"
                     >
                       <b-form-input
@@ -82,19 +82,19 @@
                     v-if="commission"
                     :state="CommissionValidation"
                   >
-                  please enter number less than 1 
+                  veuillez entrer un nombre inférieur à 1
                   </b-form-invalid-feedback>
                 </b-form-group>
                 </b-col>
                 <b-form-group
                   id="input-group-title"
-                  label="Product Title"
+                  label="Titre du produit"
                   label-for="input-title"
                 >
                   <b-form-input
                     id="input-title"
                     v-model="productTitle"
-                    placeholder="Enter Product Name"
+                    placeholder="Entrez le nom du produit"
                     required
                   />
                 </b-form-group>
@@ -106,7 +106,8 @@
                   <b-col cols="3" />
                   <b-col cols="6">
                     <b-button  @click="addedContract()" block type="submit" class="p-2" variant="warning">
-                      New Contract
+                      Nouveau contrat
+
                     </b-button>
                   </b-col>
                   <b-col cols="3" />
@@ -199,8 +200,8 @@ import ProductsService from '../../services/ProductsService';
         }
       },
       async addedContract(){ 
-      this.$bvToast.toast("The contract has been added successfully", {
-            title: "ADD",
+      this.$bvToast.toast("Le contrat a été ajouté avec succès", {
+            title: "Ajouter",
             variant: "success",
             toaster: "b-toaster-top-center",
             noCloseButton: false,

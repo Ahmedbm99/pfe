@@ -286,7 +286,7 @@ module.exports = {
       const product = await Product.findByPk(productId);
       if (!product) {
         return res.status(403).send({
-          error: "No product to delete.",
+          error: "Aucun Produit pour supprimer.",
         });
       }
       await product.destroy();

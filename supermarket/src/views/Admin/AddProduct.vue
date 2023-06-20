@@ -22,7 +22,7 @@
                   <b-form-input
                     id="input-title"
                     v-model="product.title"
-                    placeholder="Enter Product Name"
+                    placeholder="Entrez le nom du produit"
                     required
                   />
                 </b-form-group>
@@ -36,7 +36,7 @@
                       <b-form-input
                         id="input-amount"
                         v-model="product.amount"
-                        placeholder="Price"
+                        placeholder="Prix"
                         required
                       />
                     </b-form-group>
@@ -224,7 +224,7 @@
                 <b-alert variant="warning" class="mt-2" :show="imageAlert">
                   {{ errorCountImage }}
                 </b-alert>
-                <div id="Aperçu">
+                <div id="preview">
                   <b-row class="mt-2">
                     <b-col cols="3" v-for="(img, index) in dispImg" :key="index">
                       {{ index + 1 }}
@@ -314,15 +314,15 @@
         categoryList: [],
         subCategoryList: [],
         subSubCategoryList: [],
-        productCategoryMessage: "Select product category.",
+        productCategoryMessage: "Sélectionnez la catégorie de produit.",
         productCategoryAlert: false,
-        productSubTitleMessage: "Add product overview text.",
+        productSubTitleMessage: "Ajouter un sous titre du produit.",
         productSubTitleAlert: false,
-        productDescriptionMessage: "Add proper description for this product.",
+        productDescriptionMessage: "Ajoutez une description appropriée pour ce produit.",
         productDescriptionAlert: false,
-        selectedCategory: "Category Name",
-        selectedSubCategory: "Sub Category Name",
-        selectedSubSubCategory: "Sub Sub Category Name",
+        selectedCategory: "Nom de catégorie",
+        selectedSubCategory: "Nom de sous-catégorie",
+        selectedSubSubCategory: "Nom de sous-sous-catégorie",
         backupProduct: null,
         product: {
           code: "",
@@ -339,7 +339,7 @@
           SubSubCategoryId: 0,
         },
         errorCountImage:
-          "You are not allowed to add more than 10 image for any product.",
+          "Vous n'êtes pas autorisé à ajouter plus de 10 images pour un produit.",
         maximumImageCount: 10,
         imageAlert: false,
         dispImg: [],

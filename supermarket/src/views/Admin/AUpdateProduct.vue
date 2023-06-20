@@ -138,7 +138,7 @@
                               <b-form-input
                                 required
                                 v-model="newSubCategoryName"
-                                placeholder="Sub Category Name"
+                                placeholder="Nom de sous-catégorie"
                               />
                             </b-col>
                             <b-col>
@@ -247,9 +247,9 @@
         categoryList: [],
         subCategoryList: [],
         subSubCategoryList: [],
-        selectedCategory: "Category Name",
-        selectedSubCategory: "Sub Category Name",
-        selectedSubSubCategory: "Sub Sub Category Name",
+        selectedCategory: "Nom de catégorie",
+        selectedSubCategory: "Nom de sous-catégorie",
+        selectedSubSubCategory: "Nom de sous-sous-catégorie",
         product: {
           title: "",
           subtitle: "",

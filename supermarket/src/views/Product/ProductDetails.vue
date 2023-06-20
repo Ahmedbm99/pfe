@@ -87,13 +87,22 @@
               <div>
                 <h3>
                   {{ displayProduct.title }}
+                  
                 </h3>
+                <h5>{{ displayProduct.subtitle }} </h5>
                 <h5>
                   <b>Prix : </b>{{ displayProduct.amount }}
                   {{ displayProduct.currency }}
                 </h5>
-  
-                <div> <h5>{{ displayProduct.subtitle }} </h5> </div>
+                <div v-if ="displayProduct.sales === null" >
+                  <h5 >
+                   <b style="color : red" > Rupture de stock à bientot</b>
+                  </h5>
+                  </div><div v-if ="displayProduct.sales >0">
+                        <h5 >
+                          <b style="color : green">Quantité Disponible :</b>{{ displayProduct.sales }} articles
+                        </h5>
+                </div>
                 <div class="mt-4">
                   <b-row align-v="center">
                     <b-col cols="7">
@@ -112,6 +121,7 @@
                       />
                     </b-col>
                   </b-row>
+
                 </div>
                 <div class="d-flex justify-content-left mt-3">
                   <AddToCart

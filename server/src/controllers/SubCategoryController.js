@@ -69,7 +69,7 @@ module.exports = {
 			const subCategory = await SubCategory.findByPk(req.params.subCategoryId)
 			if (!subCategory) {
 				return res.status(403).send({
-					error: 'No sub category to delete.'
+					error: 'Aucune sous-catégorie à supprimer.'
 				})
 			}
 			await subCategory.destroy()

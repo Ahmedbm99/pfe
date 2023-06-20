@@ -17,6 +17,7 @@ module.exports = {
     async registerSupplier(req,res){
         req.body.profileImage = "http://localhost:8084/public/user-image/default-man.png"
         req.body.priority =2
+        req.body.userType ="Fournisseur"
         req.body.variant = "info "
         req.body.CompanyId=9
         console.log(req.body.CompanyId)
@@ -26,8 +27,8 @@ module.exports = {
     async register(req, res) {
         
         try {
-            req.body.userType = "Customer"
-            if (req.body.userType == "Customer") {
+            req.body.userType = "Client"
+            if (req.body.userType == "Client") {
                 req.body.variant = "warning"
                 req.body.priority = 3
                 req.body.CompanyId = 4
@@ -103,7 +104,7 @@ module.exports = {
             }) 
             if (!user) {
                 return res.status(403).send({
-                    error: 'Incorrect login information.'
+                    error: 'Informations de connexion incorrectes.'
                 })
             }
             if (user.registerToken) { 
@@ -135,13 +136,13 @@ module.exports = {
                     }
                 });
                 return res.status(403).send({
-                    error: 'We need to verify your email first.<br>So, We sent you a verification link to do that.<br>Please follow the given instruction.'
+                    error: 'Nous devons d\'abord vérifier votre adresse e-mail.<br>Nous vous avons donc envoyé un lien de vérification pour le faire.<br>Veuillez suivre les instructions données.'
                 })
             }
             const correctPassword = password === user.password
             if (!correctPassword) {
                 return res.status(403).send({
-                    error: 'Incorrect login information.'
+                    error: 'Informations de connexion incorrectes.'
                 })
             }
             const newUser = {
@@ -172,7 +173,7 @@ module.exports = {
             const correctPassword = req.params.password === req.user.password
             if (!correctPassword) {
                 return res.status(403).send({
-                    error: 'incorrect current password.'
+                    error: 'mot de passe actuel incorrect.'
                 })
             }
             res.send({ correctPassword: correctPassword })
@@ -228,7 +229,7 @@ module.exports = {
             await transporter.sendMail(mailOptions, function (err) {
                 if (err) {
                     return res.status(403).send({
-                        error: "An error occured when trying to send an email for request password token"
+                        error: "Une erreur s'est produite lors de la tentative d'envoi d'un e-mail pour demander un jeton de mot de passe"
                     });
                 }
             });
@@ -262,7 +263,7 @@ module.exports = {
             });
             if (!user) {
                 return res.status(403).send({
-                    error: "invalid token."
+                    error: "jeton invalide."
                 })
             }
           
@@ -283,7 +284,7 @@ module.exports = {
             });
             if (!user) {
                 return res.sendStatus(404).status({
-                    error: "Invalid email address."
+                    error: "Adresse e-mail invalide."
                 })
             }
             var retUser = {
@@ -353,7 +354,7 @@ module.exports = {
             console.log(user +"verify reg token");
             if (!user || user.registerToken != req.body.registerToken) {
                 return res.status(403).send({
-                    error: "invalid token id."
+                    error: "jeton invalide ."
                 })
             }
             const newUser = {

@@ -61,7 +61,7 @@ module.exports = {
       });
       if (!wishlistItem) {
         return res.status(403).send({
-          error: "No item to remove.",
+          error: "Aucun élément à supprimer.",
         });
       }
       await wishlistItem.destroy();
@@ -83,7 +83,7 @@ module.exports = {
         res.send({ productId: req.body.productId });
       } else {
         return res.status(403).send({
-          error: "You don't have permits to do that.",
+          error: "Vous n'avez pas de permis pour le faire.",
         });
       }
     } catch (err) {

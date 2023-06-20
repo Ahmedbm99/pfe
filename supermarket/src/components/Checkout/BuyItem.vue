@@ -138,7 +138,7 @@ export default {
       payBtnSpin: false,
       subTotalAmount: 0,
       formValidate: true,
-      message: "form data is not valid",
+      message: "Remplissez le formulaire",
       shippingRate: this.$store.state.Checkout.shippingRate,
       totalAmount: 0,
       checkoutProduct: null,

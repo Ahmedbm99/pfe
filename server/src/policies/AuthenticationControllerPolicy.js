@@ -17,31 +17,31 @@ module.exports = {
             switch (validate.error.details[0].context.key) {
                 case 'firstName':
                     res.status(400).send({
-                        error: `first name can have 2-32 characters`
+                        error: `le prénom peut avoir 2 à 32 caractères`
                     })
                     break
                 case 'lastName':
                     res.status(400).send({
-                        error: `last name can have 2-32 characters`
+                        error: `le nom de famille peut avoir de 2 à 32 caractères`
                     })
                     break
                 case 'email':
                     res.status(400).send({
-                        error: 'please provide a valid email address'
+                        error: 'Veuillez fournir une adresse email valide'
                     })
                     break
                 case 'password':
                     res.status(400).send({
-                        error: `Invalid password format<br>
-                            Only lower case, upper case and numerics is allowed.
+                        error: `Format de mot de passe invalide<br>
+                        Seuls les minuscules, les majuscules et les chiffres sont autorisés.
                         `
                     })
                     break
                 case 'phoneNo':
                     res.status(400).send({
-                        error: `Invalid Numero Telephone format<br>
+                        error: `Format de numéro de téléphone invalide<br>
                         
-                        Only numbers are allowed and .
+                        Seuls les chiffres sont autorisés et .
                     `
                     })
                 default:
@@ -64,7 +64,7 @@ module.exports = {
             switch (validate.error.details[0].context.key) {
                 case "password":
                     res.status(400).send({
-                        error: 'Invalid password format. Only lower case, upper case and numerics is allowed.'
+                        error: 'Format de mot de passe invalide. Seuls les minuscules, les majuscules et les chiffres sont autorisés.'
                     })
                     break;
                 default:

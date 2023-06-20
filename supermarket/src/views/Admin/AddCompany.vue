@@ -13,7 +13,7 @@
                   <b-col>
                     <b-form-group
                       id="input-group-first-name"
-                      label="Name"
+                      label="Nom d'Entreprise"
                       label-for="input-first-name"
                     >
                       <b-form-input
@@ -37,7 +37,7 @@
                     <b-col>
                     <b-form-group
                       id="input-group-phone-number"
-                      label="Phone Number"
+                      label="Numero telephone"
                       label-for="input-phone-number"
                     >
                       <b-form-input
@@ -102,12 +102,12 @@
                     <b-col>
                     <b-form-group
                         id="input-group-images"
-                        label="Company Logo"
+                        label="Logo d'entreprise"
                         label-for="input-images"
                     >
                     <b-form-file
                         id="input-images"
-                        placeholder="Company logo"
+                        placeholder="Logo d'entreprise"
                         
                         @change="selectedImage"
                   />
@@ -130,7 +130,7 @@
                     <b-col>
                     <b-form-group
                       id="input-group-location"
-                      label="location"
+                      label="emplacement"
                       label-for="input-location"
                     >
                       <b-form-input
@@ -209,7 +209,7 @@
     data() {
       return {
         errorCountImage:
-          "You are not allowed to add more than 1 image for this company.",
+          "Vous n'êtes pas autorisé à ajouter plus d'une image pour cette entreprise.",
         maximumImageCount: 1,
         imageAlert: false,
         dispImg: [],

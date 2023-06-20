@@ -300,7 +300,7 @@
           this.$store.dispatch("CurrentUser/setNewUserEmail", this.email);
        
          
-          this.$router.push({ path: "/admin" });
+          this.$router.push({ path: "/admin/users" });
         } catch (error) {
           this.validEmail = false;
           this.emailMessage = error.response.data.error;
